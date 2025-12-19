@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lightweight GitHub Pages Starter</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --accent: #38bdf8;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(147, 51, 234, 0.06), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 48px 20px 20px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.08);
+      color: var(--accent);
+      font-size: 0.9rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 18px 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    p.subtitle {
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 32px auto 64px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(17, 24, 39, 0.92), rgba(17, 24, 39, 0.86));
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 35%);
+      pointer-events: none;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p, .card ol, .card ul {
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .card ul {
+      list-style: disc;
+    }
+
+    .card ol {
+      list-style: decimal;
+    }
+
+    .steps {
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 32px 20px 48px;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">⚡ Ready for GitHub Pages</div>
+    <h1>Publish a simple site in minutes</h1>
+    <p class="subtitle">
+      Drop this repository into a GitHub repository, enable Pages, and you're live. The page uses
+      zero build steps and only standard HTML & CSS, making it perfect for personal notes, a small portfolio,
+      or a landing page for your next idea.
+    </p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>How to deploy</h2>
+      <ol class="steps">
+        <li>Create a new GitHub repository and push this file.</li>
+        <li>In <strong>Settings → Pages</strong>, choose the branch (e.g., <code>main</code>) and root folder.</li>
+        <li>Save, then visit your Pages URL when the build finishes.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Customize quickly</h2>
+      <ul>
+        <li>Edit the headline, colors, and content right here in <code>index.html</code>.</li>
+        <li>Add images or sections without extra tooling—just HTML and CSS.</li>
+        <li>Keep everything in one file for easy hosting and quick changes.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Tips for a great page</h2>
+      <ul>
+        <li>Use your repository's <code>README.md</code> as a changelog or backlog.</li>
+        <li>Link to social profiles or docs with clear calls to action.</li>
+        <li>Pair this with a custom domain in Pages settings for a polished look.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Built with plain HTML + CSS. Host anywhere, no dependencies required.
+  </footer>
+</body>
+</html>
