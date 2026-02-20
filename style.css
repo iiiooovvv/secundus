@@ -121,8 +121,24 @@ p {
 }
 
 /* ===================== HERO ===================== */
+@keyframes ember-pulse {
+  0%, 100% { text-shadow: 0 0 18px rgba(160, 80, 30, 0.35), 0 0 60px rgba(120, 50, 15, 0.15); }
+  50%       { text-shadow: 0 0 30px rgba(180, 100, 40, 0.55), 0 0 90px rgba(140, 60, 20, 0.25); }
+}
+
+@keyframes veil-drift {
+  0%   { transform: translateX(0) translateY(0) scale(1.04); opacity: 0.13; }
+  40%  { transform: translateX(-1.2%) translateY(0.6%) scale(1.06); opacity: 0.17; }
+  100% { transform: translateX(0) translateY(0) scale(1.04); opacity: 0.13; }
+}
+
+@keyframes horizon-breathe {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 0.75; }
+}
+
 #hero {
-  background: var(--black);
+  background: #0d0905;
   color: var(--white);
   min-height: 100vh;
   display: flex;
@@ -131,42 +147,88 @@ p {
   overflow: hidden;
 }
 
-#hero::before {
+/* SVG grain noise overlay */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 260px 260px;
+  opacity: 0.055;
+  pointer-events: none;
+  animation: veil-drift 28s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Smoldering horizon glow */
+.hero-horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38%;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%,
+    rgba(110, 45, 10, 0.6) 0%,
+    rgba(70, 20, 5, 0.3) 45%,
+    transparent 75%);
+  pointer-events: none;
+  animation: horizon-breathe 9s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Large ghostly II watermark */
+#hero .section-inner::before {
   content: 'II';
   position: absolute;
-  right: -0.1em;
+  right: -0.05em;
   top: 50%;
   transform: translateY(-50%);
   font-family: 'UnifrakturMaguntia', cursive;
-  font-size: 40vw;
-  color: #ffffff08;
+  font-size: 42vw;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(140, 80, 30, 0.08);
   line-height: 1;
   pointer-events: none;
   user-select: none;
+  z-index: 0;
+}
+
+/* Canvas for ash motes */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
 }
 
 #hero .section-inner {
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 
-#hero .section-label { color: #666; }
-#hero .section-label::after { background: #444; }
+#hero .section-label {
+  color: rgba(160, 100, 50, 0.7);
+  letter-spacing: 0.35em;
+}
+#hero .section-label::after { background: rgba(140, 80, 30, 0.35); }
 
 #hero h1 {
   font-family: 'UnifrakturMaguntia', cursive;
   font-size: clamp(4rem, 14vw, 11rem);
   font-weight: 400;
   line-height: 0.9;
-  color: var(--white);
+  color: #d4b896;
   margin-bottom: 2rem;
+  animation: ember-pulse 7s ease-in-out infinite;
 }
 
 #hero .tagline {
   font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #888;
+  color: rgba(180, 140, 100, 0.5);
   max-width: 40ch;
   line-height: 2;
 }
@@ -175,24 +237,25 @@ p {
   display: flex;
   gap: 0;
   margin-top: 3rem;
-  border: 1px solid #333;
+  border: 1px solid rgba(120, 70, 30, 0.4);
   width: fit-content;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 #hero .meta-item {
   padding: 0.75rem 1.5rem;
-  border-right: 1px solid #333;
+  border-right: 1px solid rgba(120, 70, 30, 0.4);
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #888;
+  color: rgba(160, 120, 80, 0.6);
 }
 
 #hero .meta-item:last-child { border-right: none; }
 
 #hero .meta-item strong {
   display: block;
-  color: var(--white);
+  color: #c8a87a;
   font-size: 1rem;
   letter-spacing: 0;
   margin-bottom: 0.2rem;

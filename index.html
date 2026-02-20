@@ -26,6 +26,8 @@
 
     <!-- ===================== HERO ===================== -->
     <section id="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-horizon"></div>
       <div class="section-inner">
         <div class="section-label">A Tabletop Game</div>
         <h1>Secundus</h1>
@@ -197,6 +199,56 @@
     <span>Tabletop Game Rules</span>
   </footer>
   <!-- =================== END FOOTER =================== -->
+
+  <script>
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+
+      function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      // Mote: a slow-drifting ash particle
+      function Mote() { this.reset(true); }
+      Mote.prototype.reset = function (initial) {
+        this.x = Math.random() * canvas.width;
+        this.y = initial ? Math.random() * canvas.height : canvas.height + 4;
+        this.r = Math.random() * 1.4 + 0.3;
+        this.vy = -(Math.random() * 0.18 + 0.04);  // drift upward
+        this.vx = (Math.random() - 0.5) * 0.12;
+        this.alpha = Math.random() * 0.35 + 0.05;
+        this.flicker = Math.random() * Math.PI * 2;
+        this.flickerSpeed = Math.random() * 0.015 + 0.004;
+      };
+      Mote.prototype.update = function () {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.flicker += this.flickerSpeed;
+        if (this.y < -6) this.reset(false);
+      };
+      Mote.prototype.draw = function () {
+        const a = this.alpha * (0.7 + 0.3 * Math.sin(this.flicker));
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 130, 80, ${a})`;
+        ctx.fill();
+      };
+
+      const MOTE_COUNT = 90;
+      const motes = Array.from({ length: MOTE_COUNT }, () => new Mote());
+
+      function frame() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        motes.forEach(m => { m.update(); m.draw(); });
+        requestAnimationFrame(frame);
+      }
+      frame();
+    })();
+  </script>
 
 </body>
 </html>
