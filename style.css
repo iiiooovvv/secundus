@@ -122,11 +122,11 @@ p {
 
 /* ===================== HERO ===================== */
 @keyframes ember-pulse {
-  0%   { text-shadow: 0 0 12px rgba(160, 80, 30, 0.3),  0 0 40px rgba(120, 50, 15, 0.1),  0 0 0px  rgba(200,100,30,0); color: #c8a070; }
-  30%  { text-shadow: 0 0 35px rgba(200,100, 40, 0.7),  0 0 100px rgba(160, 70, 20, 0.35), 0 0 160px rgba(200,80,10,0.15); color: #e0bc88; }
-  55%  { text-shadow: 0 0 20px rgba(170, 85, 30, 0.45), 0 0 60px  rgba(130, 55, 15, 0.2),  0 0 0px  rgba(200,100,30,0); color: #d0a878; }
-  80%  { text-shadow: 0 0 50px rgba(210,110, 45, 0.8),  0 0 120px rgba(170, 75, 20, 0.4),  0 0 200px rgba(200,80,10,0.2); color: #eac890; }
-  100% { text-shadow: 0 0 12px rgba(160, 80, 30, 0.3),  0 0 40px rgba(120, 50, 15, 0.1),  0 0 0px  rgba(200,100,30,0); color: #c8a070; }
+  0%   { text-shadow: 0 0 8px  rgba(100, 40, 10, 0.4),  0 0 30px rgba(70, 20, 5, 0.15); color: #9a7a58; }
+  30%  { text-shadow: 0 0 22px rgba(140, 55, 15, 0.65), 0 0 70px rgba(90, 28, 6, 0.3),  0 0 130px rgba(110,35,8,0.12); color: #b89068; }
+  55%  { text-shadow: 0 0 10px rgba(110, 45, 12, 0.45), 0 0 40px rgba(75, 22, 5, 0.2); color: #a07858; }
+  80%  { text-shadow: 0 0 30px rgba(160, 65, 18, 0.7),  0 0 90px rgba(100, 32, 7, 0.35), 0 0 160px rgba(120,40,8,0.15); color: #c89a70; }
+  100% { text-shadow: 0 0 8px  rgba(100, 40, 10, 0.4),  0 0 30px rgba(70, 20, 5, 0.15); color: #9a7a58; }
 }
 
 @keyframes veil-drift {
@@ -148,7 +148,7 @@ p {
 }
 
 #hero {
-  background: #0d0905;
+  background: #050303;
   color: var(--white);
   min-height: 100vh;
   display: flex;
@@ -162,9 +162,9 @@ p {
   content: '';
   position: absolute;
   inset: -20%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 260px 260px;
-  opacity: 0.11;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.18;
   pointer-events: none;
   animation: veil-drift 22s ease-in-out infinite;
   z-index: 2;
@@ -192,11 +192,11 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 38%;
-  background: radial-gradient(ellipse 80% 60% at 50% 100%,
-    rgba(110, 45, 10, 0.6) 0%,
-    rgba(70, 20, 5, 0.3) 45%,
-    transparent 75%);
+  height: 45%;
+  background: radial-gradient(ellipse 70% 55% at 50% 100%,
+    rgba(90, 18, 4, 0.75) 0%,
+    rgba(50, 8, 2, 0.45) 40%,
+    transparent 72%);
   pointer-events: none;
   animation: horizon-breathe 9s ease-in-out infinite;
   z-index: 1;
