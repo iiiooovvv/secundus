@@ -122,19 +122,29 @@ p {
 
 /* ===================== HERO ===================== */
 @keyframes ember-pulse {
-  0%, 100% { text-shadow: 0 0 18px rgba(160, 80, 30, 0.35), 0 0 60px rgba(120, 50, 15, 0.15); }
-  50%       { text-shadow: 0 0 30px rgba(180, 100, 40, 0.55), 0 0 90px rgba(140, 60, 20, 0.25); }
+  0%   { text-shadow: 0 0 12px rgba(160, 80, 30, 0.3),  0 0 40px rgba(120, 50, 15, 0.1),  0 0 0px  rgba(200,100,30,0); color: #c8a070; }
+  30%  { text-shadow: 0 0 35px rgba(200,100, 40, 0.7),  0 0 100px rgba(160, 70, 20, 0.35), 0 0 160px rgba(200,80,10,0.15); color: #e0bc88; }
+  55%  { text-shadow: 0 0 20px rgba(170, 85, 30, 0.45), 0 0 60px  rgba(130, 55, 15, 0.2),  0 0 0px  rgba(200,100,30,0); color: #d0a878; }
+  80%  { text-shadow: 0 0 50px rgba(210,110, 45, 0.8),  0 0 120px rgba(170, 75, 20, 0.4),  0 0 200px rgba(200,80,10,0.2); color: #eac890; }
+  100% { text-shadow: 0 0 12px rgba(160, 80, 30, 0.3),  0 0 40px rgba(120, 50, 15, 0.1),  0 0 0px  rgba(200,100,30,0); color: #c8a070; }
 }
 
 @keyframes veil-drift {
-  0%   { transform: translateX(0) translateY(0) scale(1.04); opacity: 0.13; }
-  40%  { transform: translateX(-1.2%) translateY(0.6%) scale(1.06); opacity: 0.17; }
-  100% { transform: translateX(0) translateY(0) scale(1.04); opacity: 0.13; }
+  0%   { transform: translateX(0)     translateY(0)    scale(1.05); opacity: 0.10; }
+  33%  { transform: translateX(-1.5%) translateY(0.8%) scale(1.08); opacity: 0.18; }
+  66%  { transform: translateX(1.0%)  translateY(-0.4%) scale(1.06); opacity: 0.13; }
+  100% { transform: translateX(0)     translateY(0)    scale(1.05); opacity: 0.10; }
 }
 
 @keyframes horizon-breathe {
-  0%, 100% { opacity: 0.55; }
-  50%       { opacity: 0.75; }
+  0%, 100% { opacity: 0.5; }
+  40%       { opacity: 0.85; }
+  70%       { opacity: 0.6; }
+}
+
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
 
 #hero {
