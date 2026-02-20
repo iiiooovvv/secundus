@@ -1,170 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lightweight GitHub Pages Starter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SECUNDUS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --bg: #0f172a;
-      --panel: #111827;
-      --accent: #38bdf8;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      --black: #0a0a0a;
+      --white: #f0ece4;
+      --red: #c0392b;
+      --border: 3px solid #0a0a0a;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.08), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(147, 51, 234, 0.06), transparent 30%),
-        var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }
-
-    header {
-      padding: 48px 20px 20px;
-      text-align: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.08);
-      color: var(--accent);
-      font-size: 0.9rem;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      letter-spacing: 0.01em;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin: 18px 0 12px;
-      letter-spacing: -0.03em;
-    }
-
-    p.subtitle {
-      margin: 0 auto;
-      max-width: 640px;
-      color: var(--muted);
+      background: var(--white);
+      color: var(--black);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
       line-height: 1.6;
     }
 
-    main {
-      max-width: 980px;
-      margin: 32px auto 64px;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    /* ===================== NAV ===================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 44px;
+      border-bottom: var(--border);
     }
 
-    .card {
-      background: linear-gradient(145deg, rgba(17, 24, 39, 0.92), rgba(17, 24, 39, 0.86));
-      border: 1px solid rgba(148, 163, 184, 0.12);
-      border-radius: 16px;
-      padding: 20px 22px;
-      box-shadow: var(--shadow);
+    nav .logo {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 0;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 0 1rem;
+      height: 44px;
+      line-height: 44px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-left: 1px solid #333;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    nav ul li a:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+    /* =================== END NAV =================== */
+
+    main { padding-top: 44px; }
+
+    section { border-bottom: var(--border); }
+
+    .section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--red);
+      opacity: 0.4;
+    }
+
+    h2 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: 2.5rem 0 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--black);
+    }
+
+    p {
+      max-width: 65ch;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      background: var(--black);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    .card::before {
-      content: "";
+    #hero::before {
+      content: 'II';
       position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 35%);
+      right: -0.1em;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: 40vw;
+      color: #ffffff08;
+      line-height: 1;
       pointer-events: none;
+      user-select: none;
     }
 
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
+    #hero .section-inner {
+      position: relative;
+      z-index: 1;
     }
 
-    .card p, .card ol, .card ul {
-      color: var(--muted);
-      line-height: 1.6;
-      margin: 0;
-      padding-left: 18px;
+    #hero .section-label { color: #666; }
+    #hero .section-label::after { background: #444; }
+
+    #hero h1 {
+      font-family: 'UnifrakturMaguntia', cursive;
+      font-size: clamp(4rem, 14vw, 11rem);
+      font-weight: 400;
+      line-height: 0.9;
+      color: var(--white);
+      margin-bottom: 2rem;
     }
 
-    .card ul {
-      list-style: disc;
+    #hero .tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+      max-width: 40ch;
+      line-height: 2;
     }
 
-    .card ol {
-      list-style: decimal;
+    #hero .meta {
+      display: flex;
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid #333;
+      width: fit-content;
     }
 
-    .steps {
-      padding-left: 18px;
-      margin: 8px 0 0;
+    #hero .meta-item {
+      padding: 0.75rem 1.5rem;
+      border-right: 1px solid #333;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
     }
 
+    #hero .meta-item:last-child { border-right: none; }
+
+    #hero .meta-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 1rem;
+      letter-spacing: 0;
+      margin-bottom: 0.2rem;
+    }
+    /* =================== END HERO =================== */
+
+    /* ===================== OVERVIEW ===================== */
+    #overview .section-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    #overview .overview-left h2 { font-size: 2.5rem; }
+    #overview .overview-right p { max-width: 100%; }
+    /* =================== END OVERVIEW =================== */
+
+    /* ===================== COMPONENTS ===================== */
+    #components {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    #components .section-label { color: #555; }
+    #components .section-label::after { background: #444; }
+    #components h2 { color: var(--white); }
+    #components h3 { color: #888; border-color: #333; }
+    #components p { color: #aaa; }
+
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid #333;
+      margin-top: 2rem;
+    }
+
+    .component-item {
+      padding: 1.5rem;
+      border-right: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    .component-item:nth-child(3n) { border-right: none; }
+
+    .component-item .qty {
+      font-size: 2rem;
+      font-family: 'UnifrakturMaguntia', cursive;
+      color: var(--red);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .component-item .name {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #666;
+    }
+    /* =================== END COMPONENTS =================== */
+
+    /* ===================== RULES ===================== */
+    #rules .rule-block {
+      border-left: 3px solid var(--black);
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    #rules .rule-block h3 {
+      border: none;
+      margin-top: 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.5rem;
+      padding: 0;
+    }
+
+    #rules .rule-block p { max-width: 100%; }
+    /* =================== END RULES =================== */
+
+    /* ===================== QUICK REFERENCE ===================== */
+    #quickref {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    #quickref .section-label { color: rgba(255,255,255,0.5); }
+    #quickref .section-label::after { background: rgba(255,255,255,0.3); }
+    #quickref h2, #quickref h3 { color: var(--white); }
+    #quickref h3 { border-color: rgba(255,255,255,0.3); }
+    #quickref p { color: rgba(255,255,255,0.85); }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.75rem;
+    }
+
+    .ref-table th, .ref-table td {
+      padding: 0.5rem 0;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      vertical-align: top;
+    }
+
+    .ref-table th {
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.5);
+      padding-bottom: 0.75rem;
+    }
+    /* =================== END QUICK REFERENCE =================== */
+
+    /* ===================== FOOTER ===================== */
     footer {
-      text-align: center;
-      color: var(--muted);
-      padding: 32px 20px 48px;
-      font-size: 0.95rem;
+      background: var(--black);
+      color: #555;
+      padding: 1.5rem 2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+    /* =================== END FOOTER =================== */
 
-    a {
-      color: var(--accent);
+    @media (max-width: 700px) {
+      nav ul { display: none; }
+      #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .component-grid { grid-template-columns: 1fr 1fr; }
+      .component-item:nth-child(3n) { border-right: 1px solid #333; }
+      .component-item:nth-child(2n) { border-right: none; }
+      .ref-grid { grid-template-columns: 1fr; }
+      h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="badge">⚡ Ready for GitHub Pages</div>
-    <h1>Publish a simple site in minutes</h1>
-    <p class="subtitle">
-      Drop this repository into a GitHub repository, enable Pages, and you're live. The page uses
-      zero build steps and only standard HTML & CSS, making it perfect for personal notes, a small portfolio,
-      or a landing page for your next idea.
-    </p>
-  </header>
+
+  <!-- ===================== NAV ===================== -->
+  <nav>
+    <a href="#hero" class="logo">Secundus</a>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#components">Components</a></li>
+      <li><a href="#rules">Rules</a></li>
+      <li><a href="#quickref">Quick Ref</a></li>
+    </ul>
+  </nav>
+  <!-- =================== END NAV =================== -->
 
   <main>
-    <section class="card">
-      <h2>How to deploy</h2>
-      <ol class="steps">
-        <li>Create a new GitHub repository and push this file.</li>
-        <li>In <strong>Settings → Pages</strong>, choose the branch (e.g., <code>main</code>) and root folder.</li>
-        <li>Save, then visit your Pages URL when the build finishes.</li>
-      </ol>
-    </section>
 
-    <section class="card">
-      <h2>Customize quickly</h2>
-      <ul>
-        <li>Edit the headline, colors, and content right here in <code>index.html</code>.</li>
-        <li>Add images or sections without extra tooling—just HTML and CSS.</li>
-        <li>Keep everything in one file for easy hosting and quick changes.</li>
-      </ul>
+    <!-- ===================== HERO ===================== -->
+    <section id="hero">
+      <div class="section-inner">
+        <div class="section-label">A Tabletop Game</div>
+        <h1>Secundus</h1>
+        <p class="tagline">[ Your tagline goes here. One sentence. Make it count. ]</p>
+        <div class="meta">
+          <div class="meta-item"><strong>2–4</strong>Players</div>
+          <div class="meta-item"><strong>60 min</strong>Play Time</div>
+          <div class="meta-item"><strong>14+</strong>Age</div>
+        </div>
+      </div>
     </section>
+    <!-- =================== END HERO =================== -->
 
-    <section class="card">
-      <h2>Tips for a great page</h2>
-      <ul>
-        <li>Use your repository's <code>README.md</code> as a changelog or backlog.</li>
-        <li>Link to social profiles or docs with clear calls to action.</li>
-        <li>Pair this with a custom domain in Pages settings for a polished look.</li>
-      </ul>
+    <!-- ===================== OVERVIEW ===================== -->
+    <section id="overview">
+      <div class="section-inner">
+        <div class="overview-left">
+          <div class="section-label">Overview</div>
+          <h2>What is Secundus?</h2>
+        </div>
+        <div class="overview-right">
+          <p>[ Write a 2–3 paragraph overview of your game here. What is it about? What is the core tension or drama? Why is it interesting to play? ]</p>
+          <p>[ Describe the setting or theme. What world does this game take place in? What are players trying to accomplish? ]</p>
+          <p>[ What makes this game different from others? What is the core experience you want players to have? ]</p>
+        </div>
+      </div>
     </section>
+    <!-- =================== END OVERVIEW =================== -->
+
+    <!-- ===================== COMPONENTS ===================== -->
+    <section id="components">
+      <div class="section-inner">
+        <div class="section-label">What's in the Box</div>
+        <h2>Components</h2>
+        <p>[ Brief intro to components. Everything players need to play. ]</p>
+
+        <div class="component-grid">
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">00</span>
+            <span class="name">Component Name</span>
+          </div>
+        </div>
+
+        <h3>Setup</h3>
+        <p>[ Describe how to set up the game before play begins. Steps, arrangement, initial state. ]</p>
+      </div>
+    </section>
+    <!-- =================== END COMPONENTS =================== -->
+
+    <!-- ===================== RULES ===================== -->
+    <section id="rules">
+      <div class="section-inner">
+        <div class="section-label">How to Play</div>
+        <h2>Rules &amp; Mechanics</h2>
+
+        <h3>Turn Structure</h3>
+        <div class="rule-block">
+          <h3>Phase I — [ Name ]</h3>
+          <p>[ Describe what happens in this phase. ]</p>
+        </div>
+        <div class="rule-block">
+          <h3>Phase II — [ Name ]</h3>
+          <p>[ Describe what happens in this phase. ]</p>
+        </div>
+        <div class="rule-block">
+          <h3>Phase III — [ Name ]</h3>
+          <p>[ Describe what happens in this phase. ]</p>
+        </div>
+
+        <h3>Core Mechanics</h3>
+        <p>[ Describe the central mechanic of your game. How does the main system work? ]</p>
+
+        <h3>Winning &amp; Losing</h3>
+        <p>[ What does a player do to win? What triggers the end of the game? ]</p>
+
+        <h3>Special Rules</h3>
+        <p>[ Any edge cases, exceptions, or important clarifications. ]</p>
+      </div>
+    </section>
+    <!-- =================== END RULES =================== -->
+
+    <!-- ===================== QUICK REFERENCE ===================== -->
+    <section id="quickref">
+      <div class="section-inner">
+        <div class="section-label">At a Glance</div>
+        <h2>Quick Reference</h2>
+        <p>[ Everything you need to remember during play. ]</p>
+
+        <div class="ref-grid">
+          <div>
+            <h3>Turn Order</h3>
+            <table class="ref-table">
+              <thead><tr><th>#</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>[ Step ]</td></tr>
+                <tr><td>2</td><td>[ Step ]</td></tr>
+                <tr><td>3</td><td>[ Step ]</td></tr>
+                <tr><td>4</td><td>[ Step ]</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>Key Terms</h3>
+            <table class="ref-table">
+              <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+              <tbody>
+                <tr><td>[ Term ]</td><td>[ Definition ]</td></tr>
+                <tr><td>[ Term ]</td><td>[ Definition ]</td></tr>
+                <tr><td>[ Term ]</td><td>[ Definition ]</td></tr>
+                <tr><td>[ Term ]</td><td>[ Definition ]</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>Common Actions</h3>
+            <table class="ref-table">
+              <thead><tr><th>Action</th><th>Effect</th></tr></thead>
+              <tbody>
+                <tr><td>[ Action ]</td><td>[ Effect ]</td></tr>
+                <tr><td>[ Action ]</td><td>[ Effect ]</td></tr>
+                <tr><td>[ Action ]</td><td>[ Effect ]</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div>
+            <h3>End Conditions</h3>
+            <table class="ref-table">
+              <thead><tr><th>Condition</th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><td>[ Condition ]</td><td>[ Result ]</td></tr>
+                <tr><td>[ Condition ]</td><td>[ Result ]</td></tr>
+                <tr><td>[ Condition ]</td><td>[ Result ]</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =================== END QUICK REFERENCE =================== -->
+
   </main>
 
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    Built with plain HTML + CSS. Host anywhere, no dependencies required.
+    <span>Secundus &copy; 2025</span>
+    <span>Tabletop Game Rules</span>
   </footer>
+  <!-- =================== END FOOTER =================== -->
+
 </body>
 </html>
