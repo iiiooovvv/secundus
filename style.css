@@ -1,0 +1,341 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #f0ece4;
+  --red: #c0392b;
+  --border: 3px solid #0a0a0a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===================== NAV ===================== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 44px;
+  border-bottom: var(--border);
+}
+
+nav .logo {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 1rem;
+  height: 44px;
+  line-height: 44px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-left: 1px solid #333;
+  transition: background 0.1s, color 0.1s;
+}
+
+nav ul li a:hover {
+  background: var(--white);
+  color: var(--black);
+}
+/* =================== END NAV =================== */
+
+main { padding-top: 44px; }
+
+section { border-bottom: var(--border); }
+
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--red);
+  opacity: 0.4;
+}
+
+h2 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--black);
+}
+
+p {
+  max-width: 65ch;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* ===================== HERO ===================== */
+#hero {
+  background: var(--black);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: 'II';
+  position: absolute;
+  right: -0.1em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 40vw;
+  color: #ffffff08;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+#hero .section-inner {
+  position: relative;
+  z-index: 1;
+}
+
+#hero .section-label { color: #666; }
+#hero .section-label::after { background: #444; }
+
+#hero h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: clamp(4rem, 14vw, 11rem);
+  font-weight: 400;
+  line-height: 0.9;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+#hero .tagline {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  max-width: 40ch;
+  line-height: 2;
+}
+
+#hero .meta {
+  display: flex;
+  gap: 0;
+  margin-top: 3rem;
+  border: 1px solid #333;
+  width: fit-content;
+}
+
+#hero .meta-item {
+  padding: 0.75rem 1.5rem;
+  border-right: 1px solid #333;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+#hero .meta-item:last-child { border-right: none; }
+
+#hero .meta-item strong {
+  display: block;
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: 0;
+  margin-bottom: 0.2rem;
+}
+/* =================== END HERO =================== */
+
+/* ===================== OVERVIEW ===================== */
+#overview .section-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+#overview .overview-left h2 { font-size: 2.5rem; }
+#overview .overview-right p { max-width: 100%; }
+/* =================== END OVERVIEW =================== */
+
+/* ===================== COMPONENTS ===================== */
+#components {
+  background: var(--black);
+  color: var(--white);
+}
+
+#components .section-label { color: #555; }
+#components .section-label::after { background: #444; }
+#components h2 { color: var(--white); }
+#components h3 { color: #888; border-color: #333; }
+#components p { color: #aaa; }
+
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid #333;
+  margin-top: 2rem;
+}
+
+.component-item {
+  padding: 1.5rem;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.component-item:nth-child(3n) { border-right: none; }
+
+.component-item .qty {
+  font-size: 2rem;
+  font-family: 'UnifrakturMaguntia', cursive;
+  color: var(--red);
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.component-item .name {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666;
+}
+/* =================== END COMPONENTS =================== */
+
+/* ===================== RULES ===================== */
+#rules .rule-block {
+  border-left: 3px solid var(--black);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+#rules .rule-block h3 {
+  border: none;
+  margin-top: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+
+#rules .rule-block p { max-width: 100%; }
+/* =================== END RULES =================== */
+
+/* ===================== QUICK REFERENCE ===================== */
+#quickref {
+  background: var(--red);
+  color: var(--white);
+}
+
+#quickref .section-label { color: rgba(255,255,255,0.5); }
+#quickref .section-label::after { background: rgba(255,255,255,0.3); }
+#quickref h2, #quickref h3 { color: var(--white); }
+#quickref h3 { border-color: rgba(255,255,255,0.3); }
+#quickref p { color: rgba(255,255,255,0.85); }
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.ref-table th, .ref-table td {
+  padding: 0.5rem 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  vertical-align: top;
+}
+
+.ref-table th {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  padding-bottom: 0.75rem;
+}
+/* =================== END QUICK REFERENCE =================== */
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: var(--black);
+  color: #555;
+  padding: 1.5rem 2rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* =================== END FOOTER =================== */
+
+@media (max-width: 700px) {
+  nav ul { display: none; }
+  #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .component-grid { grid-template-columns: 1fr 1fr; }
+  .component-item:nth-child(3n) { border-right: 1px solid #333; }
+  .component-item:nth-child(2n) { border-right: none; }
+  .ref-grid { grid-template-columns: 1fr; }
+  h2 { font-size: 2.2rem; }
+}
