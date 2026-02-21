@@ -67,7 +67,8 @@ nav ul li a {
   transition: color 0.15s, background 0.15s;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.nav-active {
   color: var(--bone);
   background: #1a1008;
 }
