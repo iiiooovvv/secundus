@@ -740,6 +740,222 @@ footer span {
 }
 /* =================== END FOOTER =================== */
 
+/* ===================== ROLLS ENCYCLOPEDIA ===================== */
+#rolls-hero {
+  background: #080503;
+  position: relative;
+  border-bottom: var(--border);
+}
+
+#rolls-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('3.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  filter: grayscale(0.7) contrast(1.1) brightness(0.35) sepia(0.3);
+  z-index: 0;
+}
+
+#rolls-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 4, 2, 0.85) 0%,
+    rgba(6, 4, 2, 0.60) 60%,
+    rgba(6, 4, 2, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+#rolls-hero .section-inner {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+}
+
+#rolls-hero .section-label { color: #c07840; }
+#rolls-hero .section-label::after { background: #8a4820; }
+#rolls-hero h2 { color: var(--bone); margin-bottom: 1rem; }
+#rolls-hero p { color: #c8bba8; }
+
+/* Roll entries container */
+#roll-entries {
+  background: #0a0704;
+  position: relative;
+}
+
+#roll-entries::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('4.jpg');
+  background-size: cover;
+  background-position: center 50%;
+  filter: grayscale(0.85) contrast(1.1) brightness(0.2) sepia(0.3);
+  z-index: 0;
+}
+
+#roll-entries::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 4, 1, 0.88);
+  z-index: 1;
+}
+
+#roll-entries .section-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Individual roll entry card */
+.roll-entry {
+  border: 1px solid #2a1a0a;
+  border-bottom: none;
+  background: rgba(8, 5, 2, 0.6);
+}
+
+.roll-entry:last-child {
+  border-bottom: 1px solid #2a1a0a;
+}
+
+.roll-entry-header {
+  padding: 1.5rem 2rem 1.25rem;
+  border-bottom: 1px solid #2a1a0a;
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.roll-phase-tag {
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #d8804a;
+  border: 1px solid #3a1a08;
+  padding: 0.25rem 0.6rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.roll-name {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--bone);
+  line-height: 1;
+  margin: 0;
+}
+
+.roll-when {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: #7a6a55;
+  font-style: italic;
+  flex-basis: 100%;
+  margin-top: -0.5rem;
+}
+
+.roll-entry-body {
+  padding: 1.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roll-dice-block,
+.roll-result-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.roll-dice-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c07840;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #2a1a0a;
+}
+
+.roll-dice-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.roll-dice-list li {
+  font-size: 0.75rem;
+  color: #c0b098;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+/* Dice tag pills */
+.dice-tag {
+  display: inline-block;
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dice-tag.always  { background: #1e1208; color: #c8a070; border: 1px solid #3a2010; }
+.dice-tag.skill   { background: #0e1408; color: #80a060; border: 1px solid #203010; }
+.dice-tag.doom    { background: #1e0808; color: #c05040; border: 1px solid #3a1010; }
+.dice-tag.wound   { background: #1a0a0a; color: #a04040; border: 1px solid #3a1010; }
+
+.roll-result-block p {
+  font-size: 0.8rem;
+  color: #c0b098;
+  max-width: 100%;
+  margin: 0;
+}
+
+.roll-result-block strong {
+  color: var(--bone);
+}
+
+.roll-result-block .ref-table {
+  margin-top: 0.25rem;
+}
+
+.roll-note {
+  font-size: 0.7rem;
+  color: #7a6a55;
+  font-style: italic;
+  border-left: 2px solid #3a1a08;
+  padding-left: 1rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .roll-entry-header { gap: 0.75rem; }
+  .roll-name { font-size: 1.5rem; }
+  .roll-entry-body { padding: 1.25rem 1.25rem 1.5rem; }
+  .roll-entry-header { padding: 1.25rem 1.25rem 1rem; }
+}
+/* =================== END ROLLS ENCYCLOPEDIA =================== */
+
 @media (max-width: 700px) {
   #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
   .component-grid { grid-template-columns: 1fr 1fr; }
