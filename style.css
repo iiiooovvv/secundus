@@ -72,6 +72,63 @@ nav ul li a.nav-active {
   color: var(--bone);
   background: #1a1008;
 }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--dim);
+  transition: transform 0.2s, opacity 0.2s, background 0.15s;
+}
+
+.nav-toggle:hover span { background: var(--bone); }
+
+/* Animate to X when open */
+nav.nav-open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+nav.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 44px;
+    left: 0;
+    right: 0;
+    background: #0a0806;
+    border-bottom: 1px solid #2a1a0a;
+    gap: 0;
+  }
+
+  nav.nav-open ul { display: flex; }
+
+  nav ul li a {
+    height: auto;
+    line-height: 1;
+    padding: 1rem 2rem;
+    border-left: none;
+    border-top: 1px solid #1e1408;
+    font-size: 0.7rem;
+  }
+}
 /* =================== END NAV =================== */
 
 main { padding-top: 44px; }
@@ -684,7 +741,6 @@ footer span {
 /* =================== END FOOTER =================== */
 
 @media (max-width: 700px) {
-  nav ul { display: none; }
   #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
   .component-grid { grid-template-columns: 1fr 1fr; }
   .component-item:nth-child(3n) { border-right: 1px solid #2a1a0a; }

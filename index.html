@@ -11,8 +11,11 @@
 <body>
 
   <!-- ===================== NAV ===================== -->
-  <nav>
+  <nav id="main-nav">
     <a href="#hero" class="logo">Secundus</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul>
       <li><a href="#overview">Overview</a></li>
       <li><a href="rules.html">Rules</a></li>
@@ -273,6 +276,24 @@
     resize();
     window.addEventListener('resize', resize);
     requestAnimationFrame(frame);
+  })();
+  </script>
+
+  <script>
+  (function () {
+    const nav = document.getElementById('main-nav');
+    const btn = nav.querySelector('.nav-toggle');
+    btn.addEventListener('click', function () {
+      const open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    // Close menu when a link is clicked
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
   })();
   </script>
 
