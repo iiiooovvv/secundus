@@ -1,17 +1,22 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black: #0a0a0a;
-  --white: #f0ece4;
-  --red: #c0392b;
-  --border: 3px solid #0a0a0a;
+  --black:  #0c0a08;
+  --ash:    #1a1510;
+  --parch:  #cfc4b0;
+  --dim:    #8a7d6a;
+  --rust:   #7a2e12;
+  --blood:  #4a0e04;
+  --bone:   #d8cbb8;
+  --border: 2px solid #2a2018;
+  --border-rust: 1px solid #3a2010;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--white);
-  color: var(--black);
+  background: #111008;
+  color: var(--bone);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 15px;
   line-height: 1.6;
@@ -24,21 +29,21 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: var(--black);
-  color: var(--white);
+  background: #0a0806;
+  color: var(--bone);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
   height: 44px;
-  border-bottom: var(--border);
+  border-bottom: 1px solid #2a1a0a;
 }
 
 nav .logo {
   font-family: 'Bebas Neue', cursive;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
-  color: var(--white);
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: var(--bone);
   text-decoration: none;
 }
 
@@ -53,18 +58,18 @@ nav ul li a {
   padding: 0 1rem;
   height: 44px;
   line-height: 44px;
-  color: var(--white);
+  color: var(--dim);
   text-decoration: none;
-  font-size: 0.7rem;
-  letter-spacing: 0.15em;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  border-left: 1px solid #333;
-  transition: background 0.1s, color 0.1s;
+  border-left: 1px solid #1e1408;
+  transition: color 0.15s, background 0.15s;
 }
 
 nav ul li a:hover {
-  background: var(--white);
-  color: var(--black);
+  color: var(--bone);
+  background: #1a1008;
 }
 /* =================== END NAV =================== */
 
@@ -79,10 +84,10 @@ section { border-bottom: var(--border); }
 }
 
 .section-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--rust);
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -93,8 +98,8 @@ section { border-bottom: var(--border); }
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--red);
-  opacity: 0.4;
+  background: var(--rust);
+  opacity: 0.3;
 }
 
 h2 {
@@ -103,20 +108,22 @@ h2 {
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 2rem;
+  color: var(--bone);
 }
 
 h3 {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin: 2.5rem 0 0.75rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid #2a2018;
+  color: var(--dim);
 }
 
 p {
   max-width: 65ch;
-  color: #333;
+  color: #9a8e7a;
   margin-bottom: 1rem;
 }
 
@@ -130,10 +137,10 @@ p {
 }
 
 @keyframes veil-drift {
-  0%   { transform: translateX(0)     translateY(0)    scale(1.05); opacity: 0.10; }
-  33%  { transform: translateX(-1.5%) translateY(0.8%) scale(1.08); opacity: 0.18; }
+  0%   { transform: translateX(0)     translateY(0)     scale(1.05); opacity: 0.10; }
+  33%  { transform: translateX(-1.5%) translateY(0.8%)  scale(1.08); opacity: 0.18; }
   66%  { transform: translateX(1.0%)  translateY(-0.4%) scale(1.06); opacity: 0.13; }
-  100% { transform: translateX(0)     translateY(0)    scale(1.05); opacity: 0.10; }
+  100% { transform: translateX(0)     translateY(0)     scale(1.05); opacity: 0.10; }
 }
 
 @keyframes horizon-breathe {
@@ -149,7 +156,7 @@ p {
 
 #hero {
   background: #050303;
-  color: var(--white);
+  color: var(--bone);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -164,17 +171,15 @@ p {
   background-image: url('brutalisms.jpg');
   background-size: cover;
   background-position: center 30%;
-  /* desaturate, crush contrast, push into sepia-rust */
   filter:
     grayscale(0.88)
     contrast(1.35)
     brightness(0.28)
     sepia(0.55);
-  /* tint the result toward dried blood via mix-blend */
   z-index: 0;
 }
 
-/* Colour tint layer over the bg — deep ox-blood */
+/* Colour tint layer — deep ox-blood */
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -183,7 +188,7 @@ p {
   mix-blend-mode: multiply;
 }
 
-/* Hard vignette — collapses edges to pure black */
+/* Hard vignette */
 .hero-bg::before {
   content: '';
   position: absolute;
@@ -330,6 +335,10 @@ p {
 /* =================== END HERO =================== */
 
 /* ===================== OVERVIEW ===================== */
+#overview {
+  background: #0e0b08;
+}
+
 #overview .section-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -343,28 +352,27 @@ p {
 
 /* ===================== COMPONENTS ===================== */
 #components {
-  background: var(--black);
-  color: var(--white);
+  background: #080604;
 }
 
-#components .section-label { color: #555; }
-#components .section-label::after { background: #444; }
-#components h2 { color: var(--white); }
-#components h3 { color: #888; border-color: #333; }
-#components p { color: #aaa; }
+#components .section-label { color: #4a3020; }
+#components .section-label::after { background: #3a2010; }
+#components h2 { color: var(--bone); }
+#components h3 { color: #5a4030; border-color: #2a1a0a; }
+#components p { color: #6a5a48; }
 
 .component-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
-  border: 1px solid #333;
+  border: 1px solid #2a1a0a;
   margin-top: 2rem;
 }
 
 .component-item {
   padding: 1.5rem;
-  border-right: 1px solid #333;
-  border-bottom: 1px solid #333;
+  border-right: 1px solid #2a1a0a;
+  border-bottom: 1px solid #2a1a0a;
 }
 
 .component-item:nth-child(3n) { border-right: none; }
@@ -372,7 +380,7 @@ p {
 .component-item .qty {
   font-size: 2rem;
   font-family: 'Bebas Neue', cursive;
-  color: var(--red);
+  color: var(--rust);
   display: block;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -382,13 +390,17 @@ p {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #666;
+  color: #4a3a28;
 }
 /* =================== END COMPONENTS =================== */
 
 /* ===================== RULES ===================== */
+#rules {
+  background: #0c0908;
+}
+
 #rules .rule-block {
-  border-left: 3px solid var(--black);
+  border-left: 2px solid #3a1a08;
   padding-left: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -400,6 +412,7 @@ p {
   letter-spacing: 0.2em;
   margin-bottom: 0.5rem;
   padding: 0;
+  color: #7a4a28;
 }
 
 #rules .rule-block p { max-width: 100%; }
@@ -407,15 +420,15 @@ p {
 
 /* ===================== QUICK REFERENCE ===================== */
 #quickref {
-  background: var(--red);
-  color: var(--white);
+  background: #0a0704;
+  border-top: 1px solid #3a1a08;
 }
 
-#quickref .section-label { color: rgba(255,255,255,0.5); }
-#quickref .section-label::after { background: rgba(255,255,255,0.3); }
-#quickref h2, #quickref h3 { color: var(--white); }
-#quickref h3 { border-color: rgba(255,255,255,0.3); }
-#quickref p { color: rgba(255,255,255,0.85); }
+#quickref .section-label { color: #4a2a12; }
+#quickref .section-label::after { background: #3a1a08; opacity: 1; }
+#quickref h2 { color: var(--bone); }
+#quickref h3 { color: #6a3a18; border-color: #2a1208; }
+#quickref p { color: #6a5040; }
 
 .ref-grid {
   display: grid;
@@ -433,30 +446,38 @@ p {
 .ref-table th, .ref-table td {
   padding: 0.5rem 0;
   text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid #2a1608;
   vertical-align: top;
+  color: #8a6a50;
 }
 
 .ref-table th {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-size: 0.6rem;
-  color: rgba(255,255,255,0.5);
+  color: #4a2a12;
   padding-bottom: 0.75rem;
+}
+
+.ref-table td:first-child {
+  color: var(--rust);
+  padding-right: 1.5rem;
+  white-space: nowrap;
 }
 /* =================== END QUICK REFERENCE =================== */
 
 /* ===================== FOOTER ===================== */
 footer {
-  background: var(--black);
-  color: #555;
+  background: #070504;
+  color: #2a1a0a;
   padding: 1.5rem 2rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 1px solid #1a0e04;
 }
 /* =================== END FOOTER =================== */
 
@@ -464,7 +485,7 @@ footer {
   nav ul { display: none; }
   #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
   .component-grid { grid-template-columns: 1fr 1fr; }
-  .component-item:nth-child(3n) { border-right: 1px solid #333; }
+  .component-item:nth-child(3n) { border-right: 1px solid #2a1a0a; }
   .component-item:nth-child(2n) { border-right: none; }
   .ref-grid { grid-template-columns: 1fr; }
   h2 { font-size: 2.2rem; }
