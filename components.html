@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secundus — Components</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IBM+Plex+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="main-nav">
+    <a href="index.html" class="logo">Secundus</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#overview">Overview</a></li>
+      <li><a href="components.html" class="nav-active">Components</a></li>
+      <li><a href="barbarian.html">Barbarian</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="rolls.html">Rolls</a></li>
+    </ul>
+  </nav>
+  <!-- =================== END NAV =================== -->
+
+  <main>
+
+    <!-- ===================== COMPONENTS ===================== -->
+    <section id="components">
+      <div class="section-inner">
+        <div class="section-label">What You Need</div>
+        <h2>Components</h2>
+        <p>Secundus runs lean. The waste doesn't give you much and neither does this game.</p>
+
+        <div class="component-grid">
+          <div class="component-item">
+            <span class="qty">1+</span>
+            <span class="name">Barbarian Miniatures</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">6–12</span>
+            <span class="name">Threat Miniatures</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">6+</span>
+            <span class="name">Six-Sided Dice</span>
+            <span class="name">Pick a color for doom dice</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">6–12</span>
+            <span class="name">Site Markers</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">1</span>
+            <span class="name">Tape Measure</span>
+          </div>
+          <div class="component-item">
+            <span class="qty">2×2ft</span>
+            <span class="name">Playing Area</span>
+          </div>
+        </div>
+
+        <h3>Setup</h3>
+        <p>Create your barbarian. Choose one skill. Choose one weapon. Choose armor or don't. Place your barbarian at one edge of the board and set your expedition goal — discover three sites, retrieve a relic, survive six rounds, kill six threats. Something to aim for. Something the waste will try to take from you. Set aside the doom dice, one color set apart from the rest. They mean something different. Put your barbarian at the edge and look out at what's ahead. You begin alone.</p>
+        <a href="barbarian.html" class="roll-link">Create Your Barbarian →</a>
+      </div>
+    </section>
+    <!-- =================== END COMPONENTS =================== -->
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <span>Secundus &copy; 2026</span>
+    <span>A Dying Earth Miniature Wargame</span>
+  </footer>
+  <!-- =================== END FOOTER =================== -->
+
+  <script>
+  (function () {
+    const nav = document.getElementById('main-nav');
+    const btn = nav.querySelector('.nav-toggle');
+    btn.addEventListener('click', function () {
+      const open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

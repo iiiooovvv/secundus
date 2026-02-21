@@ -18,6 +18,7 @@
     </button>
     <ul>
       <li><a href="index.html#overview">Overview</a></li>
+      <li><a href="components.html">Components</a></li>
       <li><a href="barbarian.html">Barbarian</a></li>
       <li><a href="rules.html" class="nav-active">Rules</a></li>
       <li><a href="rolls.html">Rolls</a></li>
@@ -27,95 +28,175 @@
 
   <main>
 
-    <!-- ===================== COMPONENTS ===================== -->
-    <section id="components">
-      <div class="section-inner">
-        <div class="section-label">What You Need</div>
-        <h2>Components</h2>
-        <p>Secundus runs lean. The waste doesn't give you much and neither does this game.</p>
-
-        <div class="component-grid">
-          <div class="component-item">
-            <span class="qty">1+</span>
-            <span class="name">Barbarian Miniatures</span>
-          </div>
-          <div class="component-item">
-            <span class="qty">6–12</span>
-            <span class="name">Threat Miniatures</span>
-          </div>
-          <div class="component-item">
-            <span class="qty">6+</span>
-            <span class="name">Six-Sided Dice</span>
-            <span class="name">Pick a color for doom dice</span>
-          </div>
-          <div class="component-item">
-            <span class="qty">6–12</span>
-            <span class="name">Site Markers</span>
-          </div>
-          <div class="component-item">
-            <span class="qty">1</span>
-            <span class="name">Tape Measure</span>
-          </div>
-          <div class="component-item">
-            <span class="qty">2×2ft</span>
-            <span class="name">Playing Area</span>
-          </div>
-        </div>
-
-        <h3>Setup</h3>
-        <p>Create your barbarian. Choose one skill. Choose one weapon. Choose armor or don't. Place your barbarian at one edge of the board and set your expedition goal — discover three sites, retrieve a relic, survive six rounds, kill six threats. Something to aim for. Something the waste will try to take from you. Set aside the doom dice, one color set apart from the rest. They mean something different. Put your barbarian at the edge and look out at what's ahead. You begin alone.</p>
-      </div>
-    </section>
-    <!-- =================== END COMPONENTS =================== -->
-
-    <!-- ===================== RULES ===================== -->
-    <section id="rules">
+    <!-- ===================== RULES HEADER ===================== -->
+    <section id="rules-hero">
       <div class="section-inner">
         <div class="section-label">How to Play</div>
-        <h2>Rules &amp; Mechanics</h2>
+        <h2>A Round of Secundus</h2>
+        <p>Each round runs five phases in order. Every phase feeds the next. The doom is always building. This is what one round looks like.</p>
+      </div>
+    </section>
+    <!-- =================== END RULES HEADER =================== -->
 
-        <h3>The Round</h3>
-        <div class="rule-block">
-          <h3>Phase I — Explore</h3>
-          <p>Each barbarian moves and discovers. What they find depends on what they rolled and how much doom they fed into the ground to get there.</p>
+    <!-- ===================== FLOW ===================== -->
+    <section id="rules-flow">
+      <div class="section-inner">
+
+        <!-- START -->
+        <div class="flow-start">
+          <span>Round begins. Doom Pool carries over from last round.</span>
+        </div>
+
+        <div class="flow-arrow">↓</div>
+
+        <!-- PHASE I -->
+        <div class="flow-phase">
+          <div class="flow-phase-header">
+            <div class="flow-phase-num">I</div>
+            <div class="flow-phase-title">Explore</div>
+            <div class="flow-phase-who">Each barbarian</div>
+          </div>
+          <div class="flow-phase-body">
+            <p>Each barbarian rolls. They move. They find something — or something finds them. Doom dice fed here go straight into the Pool.</p>
+            <div class="flow-outcomes">
+              <div class="flow-outcome bad">1–3 — Spawn a threat</div>
+              <div class="flow-outcome mixed">4–5 — Spawn a site + a threat</div>
+              <div class="flow-outcome good">6 — Spawn a site only</div>
+            </div>
+          </div>
           <a href="rolls.html#roll-explore" class="roll-link">Explore Roll →</a>
         </div>
-        <div class="rule-block">
-          <h3>Phase II — Targeting</h3>
-          <p>Barbarians with line of sight and a ranged weapon may shoot before threats advance. One roll, one result. Then the threats move.</p>
+
+        <div class="flow-arrow">↓</div>
+
+        <!-- PHASE II -->
+        <div class="flow-phase">
+          <div class="flow-phase-header">
+            <div class="flow-phase-num">II</div>
+            <div class="flow-phase-title">Targeting</div>
+            <div class="flow-phase-who">Barbarians with ranged weapons + line of sight</div>
+          </div>
+          <div class="flow-phase-body">
+            <p>Ranged barbarians shoot before threats close. One roll, one result — miss, hit, or critical. Doom dice from Folk in LOS go into the Pool.</p>
+            <div class="flow-outcomes">
+              <div class="flow-outcome bad">1–2 — Miss</div>
+              <div class="flow-outcome mixed">3–5 — Hit (eliminates Folk/Beasts, marks Monster)</div>
+              <div class="flow-outcome good">6 — Critical (eliminates anything)</div>
+            </div>
+          </div>
           <a href="rolls.html#roll-targeting" class="roll-link">Targeting Roll →</a>
         </div>
-        <div class="rule-block">
-          <h3>Phase III — Threat Pursuit</h3>
-          <p>Threats don't roll to move. The Doom Pool moves them. The heavier the pool, the faster everything closes in.</p>
+
+        <div class="flow-arrow">↓</div>
+
+        <!-- PHASE III -->
+        <div class="flow-phase">
+          <div class="flow-phase-header">
+            <div class="flow-phase-num">III</div>
+            <div class="flow-phase-title">Threat Pursuit</div>
+            <div class="flow-phase-who">All threats on the board</div>
+          </div>
+          <div class="flow-phase-body">
+            <p>No roll. Every threat moves inches equal to the <strong>sum of the Doom Pool</strong> toward the nearest barbarian. The pool doesn't just hurt you at Climax — it moves everything toward you first.</p>
+            <div class="flow-outcomes">
+              <div class="flow-outcome neutral">Pool empty — threats don't move</div>
+              <div class="flow-outcome bad">Pool has dice — every threat advances</div>
+            </div>
+          </div>
           <a href="rolls.html#roll-threat" class="roll-link">Threat Pursuit →</a>
         </div>
-        <div class="rule-block">
-          <h3>Phase IV — Encounter</h3>
-          <p>Whatever reached base contact, you fight. Wounds make you more dangerous. Doom dice make the pool heavier. Count the sixes.</p>
+
+        <div class="flow-arrow">↓</div>
+
+        <!-- PHASE IV -->
+        <div class="flow-phase">
+          <div class="flow-phase-header">
+            <div class="flow-phase-num">IV</div>
+            <div class="flow-phase-title">Encounter</div>
+            <div class="flow-phase-who">Each barbarian in base contact with a threat</div>
+          </div>
+          <div class="flow-phase-body">
+            <p>You fight whatever reached you. Gather dice: one for a melee weapon or Brawler skill, one per Wound already marked, one doom die per threat in contact. Count the sixes. Each six kills one threat. Every doom die rolled joins the Pool.</p>
+            <div class="flow-outcomes">
+              <div class="flow-outcome good">Each 6 — one Folk or Beast eliminated</div>
+              <div class="flow-outcome mixed">6 vs Monster — Monster eliminated</div>
+              <div class="flow-outcome bad">No 6s — threats remain, Pool grows</div>
+            </div>
+          </div>
           <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll →</a>
         </div>
-        <div class="rule-block">
-          <h3>Phase V — Climax</h3>
-          <p>The doom comes due. Roll everything in the Pool. Ones wound. The highest spawns something new. Then the pool clears and starts filling again.</p>
+
+        <div class="flow-arrow">↓</div>
+
+        <!-- PHASE V -->
+        <div class="flow-phase flow-phase--climax">
+          <div class="flow-phase-header">
+            <div class="flow-phase-num">V</div>
+            <div class="flow-phase-title">Climax</div>
+            <div class="flow-phase-who">Once. The doom comes due.</div>
+          </div>
+          <div class="flow-phase-body">
+            <p>Roll every die in the Pool. Read every die. Read the highest. The pool clears. The round ends.</p>
+            <div class="flow-outcomes">
+              <div class="flow-outcome bad">Each 1 — one barbarian marks a Wound</div>
+              <div class="flow-outcome bad">Highest 1–3 — spawn a Folk</div>
+              <div class="flow-outcome bad">Highest 4–5 — spawn a Beast</div>
+              <div class="flow-outcome bad">Highest 6 — spawn a Monster</div>
+            </div>
+          </div>
           <a href="rolls.html#roll-climax" class="roll-link">Climax Roll →</a>
         </div>
 
-        <h3>The Doom Pool</h3>
-        <p>The Doom Pool is the heartbeat of Secundus. It starts empty. It only grows. Every explore roll, every shot, every melee feeds it. It doesn't punish you immediately — it waits. A patient thing. The reckoning comes at Phase V, every round, without fail.</p>
+        <div class="flow-arrow">↓</div>
 
-        <h3>Wounds</h3>
-        <p>Each 1 in the Climax Roll marks a Wound on a barbarian. Wounds accumulate. At five, you choose your end. At six, you're gone — monster, fugitive, or corpse. The waste decides which.</p>
-        <a href="rolls.html#roll-wounds" class="roll-link">Wound Threshold →</a>
+        <!-- LOOP -->
+        <div class="flow-loop">
+          <span>Pool clears. New threats activate next Phase III. <strong>Round repeats.</strong></span>
+        </div>
 
-        <h3>Winning &amp; Losing</h3>
-        <p>Set your goal before you begin. Discover three sites and escape. Retrieve a relic and get out. Survive six rounds. Kill six threats. Victory means achieving it with at least one barbarian off the board. Defeat means the waste took them all. Between those two things is a pyrrhic victory — and whether that counts as winning is a question Secundus will not answer for you.</p>
-
-        <h3>Between Expeditions</h3>
-        <p>Barbarians who escape carry their scars forward. Clear their Wounds back to one marked. Spend what they found for better equipment. Give them another skill — they've earned it, whatever earning means now. They go back in. They go back because the alternative is to stay and let the world finish dying around them.</p>
       </div>
     </section>
-    <!-- =================== END RULES =================== -->
+    <!-- =================== END FLOW =================== -->
+
+    <!-- ===================== RULES NOTES ===================== -->
+    <section id="rules-notes">
+      <div class="section-inner">
+
+        <div class="rules-note-grid">
+
+          <div class="rules-note-block">
+            <h3>The Doom Pool</h3>
+            <p>Starts empty. Only grows. Fed by Explore, Targeting, and Encounter rolls whenever you choose doom dice — or when threats force them. Drives Threat Pursuit. Triggers wounds and spawns at Climax. Clears after Phase V. Starts filling again immediately.</p>
+          </div>
+
+          <div class="rules-note-block">
+            <h3>Wounds</h3>
+            <p>Each 1 in the Climax Roll marks a Wound. Each Wound also adds a die to future Encounter Rolls — the corruption makes you more dangerous as it destroys you. At 5 Wounds, choose your end. At 6, the waste chooses for you.</p>
+            <a href="rolls.html#roll-wounds" class="roll-link">Wound Threshold →</a>
+          </div>
+
+          <div class="rules-note-block">
+            <h3>Sites &amp; Threats</h3>
+            <p>Spawned by Explore and Climax rolls. Sites persist until claimed by contact. Threats activate on Phase III. Roll to determine what type each is when it spawns.</p>
+            <a href="rolls.html#roll-site" class="roll-link">Site Roll →</a>
+            <a href="rolls.html#roll-threat-type" class="roll-link" style="margin-left:1rem;">Threat Type Roll →</a>
+          </div>
+
+          <div class="rules-note-block">
+            <h3>Winning &amp; Losing</h3>
+            <p>Set your expedition goal before you begin. Discover three sites and escape. Retrieve a relic. Survive six rounds. Kill six threats. Victory means achieving it with at least one barbarian off the board. Defeat means the waste took them all. A pyrrhic victory is possible — and whether it counts is a question Secundus will not answer for you.</p>
+          </div>
+
+          <div class="rules-note-block">
+            <h3>Between Expeditions</h3>
+            <p>Survivors carry their scars. Clear Wounds back to 1 marked. Spend finds for better equipment. Gain another skill. Then go back in. They go back because staying is worse.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END RULES NOTES =================== -->
 
     <!-- ===================== QUICK REFERENCE ===================== -->
     <section id="quickref">
@@ -197,7 +278,6 @@
       const open = nav.classList.toggle('nav-open');
       btn.setAttribute('aria-expanded', open);
     });
-    // Close menu when a link is clicked
     nav.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         nav.classList.remove('nav-open');

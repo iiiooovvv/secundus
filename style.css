@@ -989,6 +989,264 @@ footer span {
 }
 /* =================== END ROLLS ENCYCLOPEDIA =================== */
 
+/* ===================== RULES FLOWCHART ===================== */
+#rules-hero {
+  background: #080604;
+  position: relative;
+  border-bottom: var(--border);
+}
+
+#rules-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('3.jpg');
+  background-size: cover;
+  background-position: center 50%;
+  filter: grayscale(0.5) contrast(1.2) brightness(0.38) sepia(0.2);
+  z-index: 0;
+}
+
+#rules-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(6,4,2,0.85) 0%, rgba(6,4,2,0.6) 60%, rgba(6,4,2,0.85) 100%);
+  z-index: 1;
+}
+
+#rules-hero .section-inner {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+}
+
+#rules-hero .section-label { color: #c07840; }
+#rules-hero .section-label::after { background: #8a4820; }
+#rules-hero h2 { color: var(--bone); margin-bottom: 1rem; }
+#rules-hero p { color: #c8bba8; }
+
+/* Flow section */
+#rules-flow {
+  background: #0a0704;
+  position: relative;
+}
+
+#rules-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('3.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  filter: grayscale(0.6) contrast(1.1) brightness(0.22) sepia(0.2);
+  z-index: 0;
+}
+
+#rules-flow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 4, 1, 0.88);
+  z-index: 1;
+}
+
+#rules-flow .section-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 3rem 2rem;
+  max-width: 700px;
+}
+
+/* Flow start/end caps */
+.flow-start,
+.flow-loop {
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #7a6a55;
+  border: 1px solid #2a1a0a;
+  padding: 0.75rem 1.5rem;
+  background: rgba(6, 4, 1, 0.7);
+}
+
+.flow-loop {
+  color: #c8bba8;
+  border-color: #3a1a08;
+}
+
+.flow-loop strong { color: var(--bone); }
+
+/* Connector arrow */
+.flow-arrow {
+  text-align: center;
+  color: #3a2010;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.1rem 0;
+  user-select: none;
+}
+
+/* Phase card */
+.flow-phase {
+  border: 1px solid #2a1a0a;
+  background: rgba(8, 5, 2, 0.75);
+  display: flex;
+  flex-direction: column;
+}
+
+.flow-phase--climax {
+  border-color: #5a1a08;
+  background: rgba(20, 5, 2, 0.85);
+}
+
+.flow-phase-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 1.5rem 0.85rem;
+  border-bottom: 1px solid #2a1a0a;
+  flex-wrap: wrap;
+}
+
+.flow-phase--climax .flow-phase-header {
+  border-color: #4a1a08;
+}
+
+.flow-phase-num {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+  color: #d8804a;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.flow-phase--climax .flow-phase-num {
+  color: #e85030;
+}
+
+.flow-phase-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4rem;
+  color: var(--bone);
+  line-height: 1;
+}
+
+.flow-phase-who {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  color: #7a6a55;
+  font-style: italic;
+  flex-basis: 100%;
+  margin-top: -0.25rem;
+}
+
+.flow-phase-body {
+  padding: 1rem 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flow-phase-body p {
+  font-size: 0.78rem;
+  color: #c0b098;
+  max-width: 100%;
+  margin: 0;
+}
+
+.flow-phase-body strong { color: var(--bone); }
+
+.flow-phase > .roll-link {
+  margin: 0 1.5rem 1rem;
+  align-self: flex-start;
+}
+
+/* Outcome pills */
+.flow-outcomes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.flow-outcome {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.75rem;
+  border-left: 2px solid;
+}
+
+.flow-outcome.good    { color: #80a868; border-color: #406030; background: rgba(30, 50, 15, 0.4); }
+.flow-outcome.mixed   { color: #c8a050; border-color: #6a5020; background: rgba(40, 30, 5, 0.4); }
+.flow-outcome.bad     { color: #c05040; border-color: #5a1808; background: rgba(40, 10, 5, 0.4); }
+.flow-outcome.neutral { color: #8a7a65; border-color: #3a2a18; background: rgba(20, 15, 8, 0.4); }
+
+/* Rules notes section */
+#rules-notes {
+  background: #080604;
+  position: relative;
+}
+
+#rules-notes::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('4.jpg');
+  background-size: cover;
+  background-position: center 50%;
+  filter: grayscale(0.8) contrast(1.15) brightness(0.25) sepia(0.3);
+  z-index: 0;
+}
+
+#rules-notes::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 3, 1, 0.82);
+  z-index: 1;
+}
+
+#rules-notes .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.rules-note-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 3rem;
+  margin-top: 1rem;
+}
+
+.rules-note-block h3 {
+  margin-top: 0;
+  color: #b07040;
+  border-color: #3a2010;
+}
+
+.rules-note-block p {
+  max-width: 100%;
+  color: #c8bba8;
+  font-size: 0.78rem;
+}
+
+.rules-note-block .roll-link {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .rules-note-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .flow-phase-header { gap: 0.6rem; }
+  .flow-phase-body { padding: 0.75rem 1rem 0.5rem; }
+  .flow-phase > .roll-link { margin: 0 1rem 0.75rem; }
+  .flow-phase-header { padding: 0.75rem 1rem 0.7rem; }
+}
+/* =================== END RULES FLOWCHART =================== */
+
 @media (max-width: 700px) {
   #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
   .component-grid { grid-template-columns: 1fr 1fr; }
