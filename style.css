@@ -35,7 +35,7 @@ nav {
 }
 
 nav .logo {
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Bebas Neue', cursive;
   font-size: 1.3rem;
   letter-spacing: 0.05em;
   color: var(--white);
@@ -98,7 +98,7 @@ section { border-bottom: var(--border); }
 }
 
 h2 {
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Bebas Neue', cursive;
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.1;
@@ -157,6 +157,46 @@ p {
   overflow: hidden;
 }
 
+/* Background image — grimdark processed */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('brutalisms.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  /* desaturate, crush contrast, push into sepia-rust */
+  filter:
+    grayscale(0.88)
+    contrast(1.35)
+    brightness(0.28)
+    sepia(0.55);
+  /* tint the result toward dried blood via mix-blend */
+  z-index: 0;
+}
+
+/* Colour tint layer over the bg — deep ox-blood */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(55, 8, 2, 0.55);
+  mix-blend-mode: multiply;
+}
+
+/* Hard vignette — collapses edges to pure black */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 85% 80% at 42% 38%,
+    transparent 30%,
+    rgba(3, 1, 1, 0.6) 65%,
+    rgba(2, 0, 0, 0.96) 100%
+  );
+  z-index: 1;
+}
+
 /* SVG grain noise overlay */
 #hero::after {
   content: '';
@@ -192,11 +232,11 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 45%;
-  background: radial-gradient(ellipse 70% 55% at 50% 100%,
-    rgba(90, 18, 4, 0.75) 0%,
-    rgba(50, 8, 2, 0.45) 40%,
-    transparent 72%);
+  height: 55%;
+  background: radial-gradient(ellipse 75% 60% at 50% 100%,
+    rgba(80, 14, 3, 0.85) 0%,
+    rgba(40, 6, 1, 0.55) 45%,
+    transparent 75%);
   pointer-events: none;
   animation: horizon-breathe 9s ease-in-out infinite;
   z-index: 1;
@@ -209,7 +249,7 @@ p {
   right: -0.05em;
   top: 50%;
   transform: translateY(-50%);
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Bebas Neue', cursive;
   font-size: 42vw;
   color: transparent;
   -webkit-text-stroke: 1px rgba(140, 80, 30, 0.08);
@@ -219,13 +259,14 @@ p {
   z-index: 0;
 }
 
-/* Canvas for ash motes */
+/* Canvas for ash motes + dither */
 #hero-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  image-rendering: pixelated;
   z-index: 3;
 }
 
@@ -241,7 +282,7 @@ p {
 #hero .section-label::after { background: rgba(140, 80, 30, 0.35); }
 
 #hero h1 {
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Bebas Neue', cursive;
   font-size: clamp(4rem, 14vw, 11rem);
   font-weight: 400;
   line-height: 0.9;
@@ -330,7 +371,7 @@ p {
 
 .component-item .qty {
   font-size: 2rem;
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Bebas Neue', cursive;
   color: var(--red);
   display: block;
   line-height: 1;
