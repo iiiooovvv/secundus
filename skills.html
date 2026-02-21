@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secundus — Keyword Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IBM+Plex+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="main-nav">
+    <a href="index.html" class="logo">Secundus</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#overview">Overview</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="barbarian.html">Barbarian</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="rolls.html">Rolls</a></li>
+      <li><a href="skills.html" class="nav-active">Skills</a></li>
+    </ul>
+  </nav>
+  <!-- =================== END NAV =================== -->
+
+  <main>
+
+    <!-- ===================== SKILLS HEADER ===================== -->
+    <section id="skills-hero">
+      <div class="section-inner">
+        <div class="section-label">Keyword Abilities</div>
+        <h2>Skills</h2>
+        <p>Skills are keyword abilities. A keyword is a word that replaces a longer rule. It works as long as the equipment that grants it is on the model. Lose the equipment, lose the skill. Gain new equipment at a site, gain the skill immediately.</p>
+        <p>Skills can be referenced by other rules. A rule that says "if a barbarian has <span class="skill-keyword">Marksman</span>" means only a barbarian carrying a Rifle. The equipment is the proof.</p>
+      </div>
+    </section>
+    <!-- =================== END SKILLS HEADER =================== -->
+
+    <!-- ===================== SKILL ENTRIES ===================== -->
+    <section id="skill-entries">
+      <div class="section-inner">
+
+        <!-- SCOUT -->
+        <div class="skill-entry" id="skill-scout">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Scout</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">—</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-explore" class="roll-link">Explore Roll</a>, roll two standard dice instead of one. Move the sum of both dice in inches before reading the result.</div>
+            </div>
+            <div class="skill-reminder">
+              Scout does not change what you find — only how far you go before you find it. Movement and discovery are resolved together. You move first, then read.
+            </div>
+          </div>
+        </div>
+
+        <!-- MARKSMAN -->
+        <div class="skill-entry" id="skill-marksman">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Marksman</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Rifle</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian makes a <a href="rolls.html#roll-targeting" class="roll-link">Targeting Roll</a>, roll two standard dice. Read the highest single die.</div>
+            </div>
+            <div class="skill-reminder">
+              Marksman only applies during Phase II. It does not grant an additional attack. It improves the chance of a high result on a single roll. A barbarian without a ranged weapon cannot use Marksman — they make no Targeting Roll at all.
+            </div>
+          </div>
+        </div>
+
+        <!-- BRAWLER -->
+        <div class="skill-entry" id="skill-brawler">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Brawler</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Maul</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a>, roll one additional standard die. Each 6 in the result eliminates one threat.</div>
+            </div>
+            <div class="skill-reminder">
+              The extra die stacks with all other sources of dice in the Encounter Roll — Wounds, doom dice, weapon advantage. Brawler makes the pool larger. More dice means more chances at 6s, and more chances at doom.
+            </div>
+          </div>
+        </div>
+
+        <!-- SURVIVOR -->
+        <div class="skill-entry" id="skill-survivor">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Survivor</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Backpack</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">Once per expedition, when this barbarian would mark a Wound from a <a href="rolls.html#roll-climax" class="roll-link">Climax Roll</a>, ignore that Wound. It is not marked.</div>
+            </div>
+            <div class="skill-reminder">
+              Survivor triggers once per expedition, not once per round. After it has been used, it cannot be used again until the next expedition. It applies only to Wounds from the Climax Roll — not from other sources. Track whether it has been spent.
+            </div>
+          </div>
+        </div>
+
+        <!-- CAMOUFLAGE -->
+        <div class="skill-entry" id="skill-camouflage">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Camouflage</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Cloak</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">During <a href="rolls.html#roll-threat" class="roll-link">Threat Pursuit</a>, threats do not move toward this barbarian unless this barbarian is the nearest target to that threat.</div>
+            </div>
+            <div class="skill-reminder">
+              Camouflage changes targeting priority, not threat movement. Threats still move during Phase III. They simply move toward whoever else is closest. If this barbarian is the only barbarian on the board, or if they are the nearest target, Camouflage has no effect and threats advance normally.
+            </div>
+          </div>
+        </div>
+
+        <!-- WEIRD -->
+        <div class="skill-entry" id="skill-weird">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Weird</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Staff</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">Once per round, after any roll, this barbarian may reroll one die of their choice. Take the new result. The new result stands.</div>
+            </div>
+            <div class="skill-reminder">
+              Weird can be used on any die — standard or doom — from any roll this barbarian is involved in. It cannot be used on dice rolled by other barbarians or by threats. The reroll is mandatory: once the die is picked up, the new result must be accepted. Weird resets at the start of each round.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END SKILL ENTRIES =================== -->
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <span>Secundus &copy; 2026</span>
+    <span>A Dying Earth Miniature Wargame</span>
+  </footer>
+  <!-- =================== END FOOTER =================== -->
+
+  <script>
+  (function () {
+    const nav = document.getElementById('main-nav');
+    const btn = nav.querySelector('.nav-toggle');
+    btn.addEventListener('click', function () {
+      const open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -1326,6 +1326,261 @@ footer span {
 }
 /* =================== END RULES FLOWCHART =================== */
 
+/* ===================== SKILLS ENCYCLOPEDIA ===================== */
+
+/* Keyword pill — used inline across all pages */
+.skill-keyword {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  color: #70a080;
+  background: #0a1210;
+  border: 1px solid #1e3828;
+  padding: 0.05em 0.45em 0.05em;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+/* Skills hero */
+#skills-hero {
+  background: #070a08;
+  position: relative;
+  padding-top: 7rem;
+}
+
+#skills-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('4.jpg') center 40% / cover no-repeat;
+  filter: grayscale(1) contrast(1.1) brightness(0.38) sepia(0.4);
+  z-index: 0;
+}
+
+#skills-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(7,10,8,0.72) 0%, rgba(7,10,8,0.58) 60%, rgba(7,10,8,0.90) 100%);
+  z-index: 1;
+}
+
+#skills-hero .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#skills-hero .section-label { color: #60a070; }
+#skills-hero .section-label::after { background: #2a5838; }
+#skills-hero h2 { color: var(--bone); }
+#skills-hero p { color: #c8bba8; max-width: 60ch; }
+#skills-hero p + p { margin-top: 0.75rem; }
+
+/* Skill entries section */
+#skill-entries {
+  background: #080b09;
+  position: relative;
+}
+
+#skill-entries::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('4.jpg') center 60% / cover no-repeat;
+  filter: grayscale(1) contrast(1.1) brightness(0.22) sepia(0.4);
+  z-index: 0;
+}
+
+#skill-entries::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8,11,9,0.82);
+  z-index: 1;
+}
+
+#skill-entries .section-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Individual skill entry card */
+.skill-entry {
+  border: 1px solid #1e3020;
+  background: #0b110d;
+  margin-bottom: 2px;
+}
+
+.skill-entry:first-child { border-radius: 3px 3px 0 0; }
+.skill-entry:last-child  { border-radius: 0 0 3px 3px; margin-bottom: 0; }
+
+.skill-entry-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.4rem 2rem 1.1rem;
+  border-bottom: 1px solid #1a2e1e;
+  background: #0d1510;
+  flex-wrap: wrap;
+}
+
+.skill-source-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #3a6045;
+  border: 1px solid #1e3828;
+  padding: 0.2em 0.6em;
+  background: #080e0a;
+  flex-shrink: 0;
+}
+
+.skill-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: #a0d0b0;
+  margin: 0;
+  line-height: 1;
+}
+
+.skill-granted-by {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: #4a6855;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.skill-granted-by .skill-keyword {
+  font-size: 0.8rem;
+}
+
+.skill-entry-body {
+  padding: 1.5rem 2rem 1.75rem;
+}
+
+.skill-rule-block {
+  margin-bottom: 1rem;
+}
+
+.skill-rule-text {
+  font-size: 0.95rem;
+  color: #d0c8b8;
+  line-height: 1.65;
+  border-left: 2px solid #2a5838;
+  padding-left: 1rem;
+}
+
+.skill-rule-text a.roll-link {
+  color: #90c8a0;
+  border-color: #3a7850;
+}
+
+.skill-reminder {
+  font-size: 0.78rem;
+  color: #607860;
+  line-height: 1.6;
+  font-style: italic;
+  border-top: 1px solid #141e16;
+  padding-top: 0.9rem;
+  margin-top: 0.9rem;
+}
+
+/* Setup links row on rules page */
+.setup-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Kitbashing section */
+#kitbashing {
+  background: #0a0c0a;
+  position: relative;
+}
+
+#kitbashing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('3.jpg') center 50% / cover no-repeat;
+  filter: grayscale(1) contrast(1.1) brightness(0.38) sepia(0.35);
+  z-index: 0;
+}
+
+#kitbashing::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,12,10,0.70) 0%, rgba(10,12,10,0.60) 50%, rgba(10,12,10,0.88) 100%);
+  z-index: 1;
+}
+
+#kitbashing .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#kitbashing .section-label { color: #608060; }
+#kitbashing .section-label::after { background: #2a4028; }
+#kitbashing h2 { color: var(--bone); }
+#kitbashing h3 { color: #80a878; border-color: #243a22; }
+#kitbashing p { color: #c8bba8; }
+
+.kit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.kit-block h3 {
+  margin-top: 0;
+}
+
+/* Rules setup section */
+#rules-setup {
+  background: #090c09;
+  position: relative;
+}
+
+#rules-setup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('1.jpg') center 40% / cover no-repeat;
+  filter: grayscale(1) contrast(1.1) brightness(0.35) sepia(0.3);
+  z-index: 0;
+}
+
+#rules-setup::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(9,12,9,0.75);
+  z-index: 1;
+}
+
+#rules-setup .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#rules-setup .section-label { color: #a08050; }
+#rules-setup .section-label::after { background: #5a4028; }
+#rules-setup h2 { color: var(--bone); }
+#rules-setup p { color: #c8bba8; max-width: 65ch; }
+#rules-setup p + p { margin-top: 0.75rem; }
+
+/* =================== END SKILLS ENCYCLOPEDIA =================== */
+
 @media (max-width: 700px) {
   #overview .section-inner { grid-template-columns: 1fr; gap: 2rem; }
   .component-grid { grid-template-columns: 1fr 1fr; }
@@ -1333,4 +1588,9 @@ footer span {
   .component-item:nth-child(2n) { border-right: none; }
   .ref-grid { grid-template-columns: 1fr; }
   h2 { font-size: 2.2rem; }
+  .kit-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .skill-entry-header { flex-direction: column; gap: 0.4rem; padding: 1rem 1.25rem 0.8rem; }
+  .skill-granted-by { margin-left: 0; }
+  .skill-entry-body { padding: 1rem 1.25rem 1.25rem; }
+  .skill-name { font-size: 1.6rem; }
 }
