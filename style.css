@@ -447,6 +447,83 @@ p {
 }
 /* =================== END COMPONENTS =================== */
 
+/* ===================== BARBARIAN ===================== */
+#barbarian {
+  background: #0a0704;
+  position: relative;
+}
+
+#barbarian::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('2.jpg');
+  background-size: cover;
+  background-position: center 60%;
+  filter: grayscale(0.8) contrast(1.1) brightness(0.35) sepia(0.4);
+  z-index: 0;
+}
+
+#barbarian::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 5, 2, 0.82) 0%,
+    rgba(8, 5, 2, 0.65) 50%,
+    rgba(8, 5, 2, 0.82) 100%
+  );
+  z-index: 1;
+}
+
+#barbarian .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#barbarian .section-label { color: #c07840; }
+#barbarian .section-label::after { background: #8a4820; }
+#barbarian h2 { color: var(--bone); }
+#barbarian h3 { color: #b07040; border-color: #3a2a18; }
+#barbarian p { color: #c8bba8; }
+
+.table-instruction {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #8a7860 !important;
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+.barbarian-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.barbarian-table-block h3 {
+  margin-top: 0;
+}
+
+.barbarian-armor {
+  margin-top: 3rem;
+  border-left: 2px solid #3a1a08;
+  padding-left: 1.5rem;
+}
+
+.barbarian-armor h3 {
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+@media (max-width: 700px) {
+  .barbarian-tables { grid-template-columns: 1fr; }
+}
+/* =================== END BARBARIAN =================== */
+
 /* ===================== RULES ===================== */
 #rules {
   background: #080604;
