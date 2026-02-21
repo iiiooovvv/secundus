@@ -651,6 +651,21 @@ p {
   color: var(--bone);
   border-color: #8a4820;
 }
+
+.roll-note .roll-link,
+.roll-when .roll-link {
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  color: #c87840;
+  border-bottom-color: #3a1a08;
+}
+
+.roll-note .roll-link:hover,
+.roll-when .roll-link:hover {
+  color: var(--bone);
+  border-bottom-color: #8a4820;
+}
 /* =================== END RULES =================== */
 
 /* ===================== QUICK REFERENCE ===================== */
