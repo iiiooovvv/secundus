@@ -576,6 +576,19 @@ p {
   font-style: italic;
 }
 
+.artifact-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 0;
+}
+
+.artifact-table-block h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
 .artifact-table {
   width: 100%;
   margin-bottom: 0;
@@ -586,6 +599,22 @@ p {
   color: #5a4a38;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+/* Skill group divider labels on skills page */
+.skill-group-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #3a5040;
+  padding: 2rem 0 0.75rem;
+  border-bottom: 1px solid #1a2e1e;
+  margin-bottom: 2px;
+}
+
+.skill-group-label:first-child {
+  padding-top: 0;
 }
 
 /* Clickable skill keyword variant */
@@ -1626,6 +1655,7 @@ footer span {
   .ref-grid { grid-template-columns: 1fr; }
   h2 { font-size: 2.2rem; }
   .kit-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .artifact-tables { grid-template-columns: 1fr; gap: 1.5rem; }
   .skill-entry-header { flex-direction: column; gap: 0.4rem; padding: 1rem 1.25rem 0.8rem; }
   .skill-granted-by { margin-left: 0; }
   .skill-entry-body { padding: 1rem 1.25rem 1.25rem; }

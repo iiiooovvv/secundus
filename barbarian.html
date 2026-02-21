@@ -34,44 +34,88 @@
       <div class="section-inner">
         <div class="section-label">Before You Go</div>
         <h2>Create Your Barbarian</h2>
-        <p>Roll, choose, or make your own. Your barbarian starts with two artifacts — weapons or equipment, whatever the waste left behind. Each artifact grants a keyword skill for as long as you carry it. Lose the artifact, lose the skill.</p>
+        <p>Roll, choose, or make your own. Your barbarian starts with two artifacts — one weapon, one equipment, or two of either. Each artifact grants a keyword skill for as long as you carry it. Lose the artifact, lose the skill.</p>
 
         <div class="barbarian-artifact-intro">
-          <span>Pick or roll twice on the artifact table. No duplicates.</span>
+          <span>Pick or roll twice. No duplicates. At least one must be a weapon.</span>
           <a href="skills.html" class="roll-link">Keyword Skills Reference →</a>
         </div>
 
-        <table class="ref-table artifact-table">
-          <thead>
-            <tr><th>d6</th><th>Artifact</th><th>Type</th><th>Grants</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td><td>Rifle</td><td class="artifact-type">Weapon</td>
-              <td><a href="skills.html#skill-marksman" class="skill-keyword skill-keyword--link">Marksman</a></td>
-            </tr>
-            <tr>
-              <td>2</td><td>Maul</td><td class="artifact-type">Weapon</td>
-              <td><a href="skills.html#skill-brawler" class="skill-keyword skill-keyword--link">Brawler</a></td>
-            </tr>
-            <tr>
-              <td>3</td><td>Backpack</td><td class="artifact-type">Equipment</td>
-              <td><a href="skills.html#skill-survivor" class="skill-keyword skill-keyword--link">Survivor</a></td>
-            </tr>
-            <tr>
-              <td>4</td><td>Cloak</td><td class="artifact-type">Equipment</td>
-              <td><a href="skills.html#skill-camouflage" class="skill-keyword skill-keyword--link">Camouflage</a></td>
-            </tr>
-            <tr>
-              <td>5</td><td>Staff</td><td class="artifact-type">Equipment</td>
-              <td><a href="skills.html#skill-weird" class="skill-keyword skill-keyword--link">Weird</a></td>
-            </tr>
-            <tr>
-              <td>6</td><td>Worn Boots</td><td class="artifact-type">Equipment</td>
-              <td><a href="skills.html#skill-scout" class="skill-keyword skill-keyword--link">Scout</a></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="artifact-tables">
+
+          <div class="artifact-table-block">
+            <h3>Weapons (d6)</h3>
+            <p class="table-instruction">Combat-focused. Each grants an offensive keyword.</p>
+            <table class="ref-table artifact-table">
+              <thead>
+                <tr><th>d6</th><th>Weapon</th><th>Grants</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td><td>Maul</td>
+                  <td><a href="skills.html#skill-brawler" class="skill-keyword skill-keyword--link">Brawler</a></td>
+                </tr>
+                <tr>
+                  <td>2</td><td>Pipe Maul</td>
+                  <td><a href="skills.html#skill-cleave" class="skill-keyword skill-keyword--link">Cleave</a></td>
+                </tr>
+                <tr>
+                  <td>3</td><td>Salvage Bow</td>
+                  <td><a href="skills.html#skill-suppression" class="skill-keyword skill-keyword--link">Suppression</a></td>
+                </tr>
+                <tr>
+                  <td>4</td><td>Chain Blade</td>
+                  <td><a href="skills.html#skill-rend" class="skill-keyword skill-keyword--link">Rend</a></td>
+                </tr>
+                <tr>
+                  <td>5</td><td>Stub Pistol</td>
+                  <td><a href="skills.html#skill-sidearm" class="skill-keyword skill-keyword--link">Sidearm</a></td>
+                </tr>
+                <tr>
+                  <td>6</td><td>Scrap Spear</td>
+                  <td><a href="skills.html#skill-reach" class="skill-keyword skill-keyword--link">Reach</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="artifact-table-block">
+            <h3>Equipment (d6)</h3>
+            <p class="table-instruction">Utility-focused. Each grants a non-combat keyword.</p>
+            <table class="ref-table artifact-table">
+              <thead>
+                <tr><th>d6</th><th>Equipment</th><th>Grants</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td><td>Rifle</td>
+                  <td><a href="skills.html#skill-marksman" class="skill-keyword skill-keyword--link">Marksman</a></td>
+                </tr>
+                <tr>
+                  <td>2</td><td>Worn Boots</td>
+                  <td><a href="skills.html#skill-scout" class="skill-keyword skill-keyword--link">Scout</a></td>
+                </tr>
+                <tr>
+                  <td>3</td><td>Backpack</td>
+                  <td><a href="skills.html#skill-survivor" class="skill-keyword skill-keyword--link">Survivor</a></td>
+                </tr>
+                <tr>
+                  <td>4</td><td>Cloak</td>
+                  <td><a href="skills.html#skill-camouflage" class="skill-keyword skill-keyword--link">Camouflage</a></td>
+                </tr>
+                <tr>
+                  <td>5</td><td>Staff</td>
+                  <td><a href="skills.html#skill-weird" class="skill-keyword skill-keyword--link">Weird</a></td>
+                </tr>
+                <tr>
+                  <td>6</td><td>Medical Kit</td>
+                  <td><a href="skills.html#skill-mend" class="skill-keyword skill-keyword--link">Mend</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
 
         <div class="barbarian-armor">
           <h3>Armor</h3>

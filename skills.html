@@ -34,8 +34,8 @@
       <div class="section-inner">
         <div class="section-label">Keyword Abilities</div>
         <h2>Skills</h2>
-        <p>Skills are keyword abilities. A keyword is a word that replaces a longer rule. It works as long as the equipment that grants it is on the model. Lose the equipment, lose the skill. Gain new equipment at a site, gain the skill immediately.</p>
-        <p>Skills can be referenced by other rules. A rule that says "if a barbarian has <span class="skill-keyword">Marksman</span>" means only a barbarian carrying a Rifle. The equipment is the proof.</p>
+        <p>Skills are keyword abilities. A keyword is a word that replaces a longer rule. It works as long as the artifact that grants it is on the model. Lose the artifact, lose the skill. Find new equipment at a site, gain the skill immediately.</p>
+        <p>Skills can be referenced by other rules. A rule that says "if a barbarian has <span class="skill-keyword">Marksman</span>" means only a barbarian carrying a Rifle. The artifact is the proof.</p>
       </div>
     </section>
     <!-- =================== END SKILLS HEADER =================== -->
@@ -44,22 +44,111 @@
     <section id="skill-entries">
       <div class="section-inner">
 
-        <!-- SCOUT -->
-        <div class="skill-entry" id="skill-scout">
+        <div class="skill-group-label">Weapon Skills</div>
+
+        <!-- BRAWLER -->
+        <div class="skill-entry" id="skill-brawler">
           <div class="skill-entry-header">
-            <div class="skill-source-tag">Equipment</div>
-            <h2 class="skill-name">Scout</h2>
-            <div class="skill-granted-by">Granted by: <span class="skill-keyword">—</span></div>
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Brawler</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Maul</span></div>
           </div>
           <div class="skill-entry-body">
             <div class="skill-rule-block">
-              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-explore" class="roll-link">Explore Roll</a>, roll two standard dice instead of one. Move the sum of both dice in inches before reading the result.</div>
+              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a>, roll one additional standard die. Each 6 eliminates one threat in base contact.</div>
             </div>
             <div class="skill-reminder">
-              Scout does not change what you find — only how far you go before you find it. Movement and discovery are resolved together. You move first, then read.
+              The extra die stacks with all other sources — Wounds, doom dice. Brawler makes the pool larger. More dice means more chances at 6s, and more chances at doom.
             </div>
           </div>
         </div>
+
+        <!-- CLEAVE -->
+        <div class="skill-entry" id="skill-cleave">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Cleave</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Pipe Maul</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian rolls a 6 on an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a>, that result eliminates all Folk and Beasts in base contact, not just one.</div>
+            </div>
+            <div class="skill-reminder">
+              Cleave only triggers on a 6. It does not apply to Monsters — a 6 against a Monster still only counts as one hit. If multiple 6s are rolled, each one triggers Cleave independently.
+            </div>
+          </div>
+        </div>
+
+        <!-- SUPPRESSION -->
+        <div class="skill-entry" id="skill-suppression">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Suppression</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Salvage Bow</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian makes a <a href="rolls.html#roll-targeting" class="roll-link">Targeting Roll</a>, any threat targeted — hit or miss — does not advance during <a href="rolls.html#roll-threat" class="roll-link">Threat Pursuit</a> this round.</div>
+            </div>
+            <div class="skill-reminder">
+              Suppression applies regardless of the Targeting result. Even a miss pins the target in place for that round. Only one threat can be targeted per Targeting Roll. Choose carefully — a suppressed threat is one that won't close the gap.
+            </div>
+          </div>
+        </div>
+
+        <!-- REND -->
+        <div class="skill-entry" id="skill-rend">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Rend</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Chain Blade</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">When this barbarian scores a hit on an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a>, place a Rend marker on the threat instead of eliminating it. A threat with a Rend marker is eliminated by any subsequent hit.</div>
+            </div>
+            <div class="skill-reminder">
+              Rend does not kill outright — it marks. A marked Folk or Beast is still on the board until it takes a second hit from any source. A marked Monster still requires a 6 to eliminate, but a non-6 hit removes the marker and counts as the hit that would normally do nothing. Track markers with a token.
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEARM -->
+        <div class="skill-entry" id="skill-sidearm">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Sidearm</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Stub Pistol</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">This barbarian may make both a <a href="rolls.html#roll-targeting" class="roll-link">Targeting Roll</a> in Phase II and an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a> in Phase IV in the same round, even if they are in base contact with a threat.</div>
+            </div>
+            <div class="skill-reminder">
+              Most barbarians must choose — ranged or melee. Sidearm removes that restriction. The Targeting Roll still requires line of sight. The Encounter Roll still requires base contact. Both rolls happen in their normal phases. Doom dice from both go into the Pool.
+            </div>
+          </div>
+        </div>
+
+        <!-- REACH -->
+        <div class="skill-entry" id="skill-reach">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Weapon</div>
+            <h2 class="skill-name">Reach</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Scrap Spear</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">This barbarian may make an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a> against any threat within 3 inches, not just threats in base contact.</div>
+            </div>
+            <div class="skill-reminder">
+              Reach extends the barbarian's melee range. A threat within 3" is a valid target even if not touching the base. The barbarian must still be within 3" at the start of Phase IV — Reach does not allow movement. Threats with Reach still advance normally in Phase III.
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group-label">Equipment Skills</div>
 
         <!-- MARKSMAN -->
         <div class="skill-entry" id="skill-marksman">
@@ -78,19 +167,19 @@
           </div>
         </div>
 
-        <!-- BRAWLER -->
-        <div class="skill-entry" id="skill-brawler">
+        <!-- SCOUT -->
+        <div class="skill-entry" id="skill-scout">
           <div class="skill-entry-header">
             <div class="skill-source-tag">Equipment</div>
-            <h2 class="skill-name">Brawler</h2>
-            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Maul</span></div>
+            <h2 class="skill-name">Scout</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Worn Boots</span></div>
           </div>
           <div class="skill-entry-body">
             <div class="skill-rule-block">
-              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-encounter" class="roll-link">Encounter Roll</a>, roll one additional standard die. Each 6 in the result eliminates one threat.</div>
+              <div class="skill-rule-text">When this barbarian makes an <a href="rolls.html#roll-explore" class="roll-link">Explore Roll</a>, roll two standard dice instead of one. Move the sum of both dice in inches before reading the result.</div>
             </div>
             <div class="skill-reminder">
-              The extra die stacks with all other sources of dice in the Encounter Roll — Wounds, doom dice, weapon advantage. Brawler makes the pool larger. More dice means more chances at 6s, and more chances at doom.
+              Scout does not change what you find — only how far you go before you find it. Movement and discovery are resolved together. You move first, then read.
             </div>
           </div>
         </div>
@@ -142,6 +231,23 @@
             </div>
             <div class="skill-reminder">
               Weird can be used on any die — standard or doom — from any roll this barbarian is involved in. It cannot be used on dice rolled by other barbarians or by threats. The reroll is mandatory: once the die is picked up, the new result must be accepted. Weird resets at the start of each round.
+            </div>
+          </div>
+        </div>
+
+        <!-- MEND -->
+        <div class="skill-entry" id="skill-mend">
+          <div class="skill-entry-header">
+            <div class="skill-source-tag">Equipment</div>
+            <h2 class="skill-name">Mend</h2>
+            <div class="skill-granted-by">Granted by: <span class="skill-keyword">Medical Kit</span></div>
+          </div>
+          <div class="skill-entry-body">
+            <div class="skill-rule-block">
+              <div class="skill-rule-text">Once per expedition, at the start of any phase, this barbarian may remove one Wound from any barbarian — including themselves — within 1 inch.</div>
+            </div>
+            <div class="skill-reminder">
+              Mend is used before the phase resolves. It cannot be used mid-roll or in response to a Wound being marked. It removes one Wound, not all Wounds. It resets between expeditions. A barbarian reduced to 6 Wounds cannot be saved by Mend retroactively — it must be used before the Wound that would end them.
             </div>
           </div>
         </div>
