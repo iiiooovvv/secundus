@@ -404,8 +404,8 @@ p {
   inset: 0;
   background-image: url('1.jpg');
   background-size: cover;
-  background-position: center 40%;
-  filter: grayscale(0.75) contrast(1.1) brightness(0.45) sepia(0.4);
+  background-position: center 50%;
+  filter: grayscale(0.7) contrast(1.2) brightness(0.5) sepia(0.35);
   z-index: 0;
 }
 
@@ -514,10 +514,10 @@ p {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('2.jpg');
+  background-image: url('6.jpg');
   background-size: cover;
-  background-position: center 60%;
-  filter: grayscale(0.8) contrast(1.1) brightness(0.35) sepia(0.4);
+  background-position: center 40%;
+  filter: grayscale(0.8) contrast(1.15) brightness(0.38) sepia(0.35);
   z-index: 0;
 }
 
@@ -593,8 +593,8 @@ p {
   inset: 0;
   background-image: url('3.jpg');
   background-size: cover;
-  background-position: center 30%;
-  filter: grayscale(0.6) contrast(1.1) brightness(0.42) sepia(0.25);
+  background-position: center 50%;
+  filter: grayscale(0.5) contrast(1.2) brightness(0.38) sepia(0.2);
   z-index: 0;
 }
 
@@ -784,10 +784,10 @@ footer span {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('3.jpg');
+  background-image: url('6.jpg');
   background-size: cover;
-  background-position: center 20%;
-  filter: grayscale(0.7) contrast(1.1) brightness(0.35) sepia(0.3);
+  background-position: center 30%;
+  filter: grayscale(0.75) contrast(1.15) brightness(0.35) sepia(0.3);
   z-index: 0;
 }
 
