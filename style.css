@@ -564,6 +564,43 @@ p {
   margin-top: 0;
 }
 
+.barbarian-artifact-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #7a6a56;
+  font-style: italic;
+}
+
+.artifact-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.artifact-table .artifact-type {
+  font-size: 0.72rem;
+  color: #5a4a38;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Clickable skill keyword variant */
+.skill-keyword--link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.skill-keyword--link:hover {
+  background: #122018;
+  color: #90d8a8;
+  border-color: #2e5840;
+}
+
 .barbarian-armor {
   margin-top: 3rem;
   border-left: 2px solid #3a1a08;

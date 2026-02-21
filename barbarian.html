@@ -34,43 +34,44 @@
       <div class="section-inner">
         <div class="section-label">Before You Go</div>
         <h2>Create Your Barbarian</h2>
-        <p>Roll, choose, or make your own. The waste doesn't care where you came from. Your equipment defines what you can do. Build the model. The model is the character sheet.</p>
+        <p>Roll, choose, or make your own. Your barbarian starts with two artifacts — weapons or equipment, whatever the waste left behind. Each artifact grants a keyword skill for as long as you carry it. Lose the artifact, lose the skill.</p>
 
-        <div class="barbarian-tables">
-
-          <div class="barbarian-table-block">
-            <h3>Equipment (d6)</h3>
-            <p class="table-instruction">Roll a d6, pick one, or kit-bash your own. Each piece of equipment grants a <a href="skills.html" class="roll-link" style="font-size:inherit;">keyword skill</a> as long as you carry it.</p>
-            <table class="ref-table">
-              <thead><tr><th>d6</th><th>Equipment</th><th>Grants</th><th>Effect</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>Rifle</td><td><span class="skill-keyword">Marksman</span></td><td>Ranged. Roll two dice on Targeting. Read the highest.</td></tr>
-                <tr><td>2</td><td>Maul</td><td><span class="skill-keyword">Brawler</span></td><td>Melee. Roll one extra die in the Encounter. Count the sixes.</td></tr>
-                <tr><td>3</td><td>Backpack</td><td><span class="skill-keyword">Survivor</span></td><td>Once per expedition, ignore one Wound result from the Doom Pool.</td></tr>
-                <tr><td>4</td><td>Cloak</td><td><span class="skill-keyword">Camouflage</span></td><td>Threats ignore this barbarian unless they are the nearest target.</td></tr>
-                <tr><td>5</td><td>Staff</td><td><span class="skill-keyword">Weird</span></td><td>Once per round, reroll one die of your choice. Take the new result.</td></tr>
-                <tr><td>6</td><td>—</td><td><span class="skill-keyword">Scout</span></td><td>Roll two dice on Explore. Move the sum of both.</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="barbarian-table-block">
-            <h3>Weapons (d6)</h3>
-            <p class="table-instruction">Roll a d6, pick one, or invent your own. Your weapon is separate from your equipment.</p>
-            <table class="ref-table">
-              <thead><tr><th>d6</th><th>Weapon</th><th>Effect</th></tr></thead>
-              <tbody>
-                <tr><td>1</td><td>Pipe Maul</td><td>Melee. Weapon advantage in the Encounter Roll.</td></tr>
-                <tr><td>2</td><td>Salvage Bow</td><td>Ranged. Shoot before threats advance. No melee advantage.</td></tr>
-                <tr><td>3</td><td>Chain Blade</td><td>Melee. Weapon advantage. On a 6, all threats in contact take a hit.</td></tr>
-                <tr><td>4</td><td>Stub Pistol</td><td>Ranged. Shoot and count the highest die. Can also fight in melee, no advantage.</td></tr>
-                <tr><td>5</td><td>Scrap Spear</td><td>Melee. Weapon advantage. May fight threats up to 3" away.</td></tr>
-                <tr><td>6</td><td>Relic Weapon</td><td>Ranged or Melee — choose each round. Weapon advantage always. Roll an extra doom die when used.</td></tr>
-              </tbody>
-            </table>
-          </div>
-
+        <div class="barbarian-artifact-intro">
+          <span>Pick or roll twice on the artifact table. No duplicates.</span>
+          <a href="skills.html" class="roll-link">Keyword Skills Reference →</a>
         </div>
+
+        <table class="ref-table artifact-table">
+          <thead>
+            <tr><th>d6</th><th>Artifact</th><th>Type</th><th>Grants</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td><td>Rifle</td><td class="artifact-type">Weapon</td>
+              <td><a href="skills.html#skill-marksman" class="skill-keyword skill-keyword--link">Marksman</a></td>
+            </tr>
+            <tr>
+              <td>2</td><td>Maul</td><td class="artifact-type">Weapon</td>
+              <td><a href="skills.html#skill-brawler" class="skill-keyword skill-keyword--link">Brawler</a></td>
+            </tr>
+            <tr>
+              <td>3</td><td>Backpack</td><td class="artifact-type">Equipment</td>
+              <td><a href="skills.html#skill-survivor" class="skill-keyword skill-keyword--link">Survivor</a></td>
+            </tr>
+            <tr>
+              <td>4</td><td>Cloak</td><td class="artifact-type">Equipment</td>
+              <td><a href="skills.html#skill-camouflage" class="skill-keyword skill-keyword--link">Camouflage</a></td>
+            </tr>
+            <tr>
+              <td>5</td><td>Staff</td><td class="artifact-type">Equipment</td>
+              <td><a href="skills.html#skill-weird" class="skill-keyword skill-keyword--link">Weird</a></td>
+            </tr>
+            <tr>
+              <td>6</td><td>Worn Boots</td><td class="artifact-type">Equipment</td>
+              <td><a href="skills.html#skill-scout" class="skill-keyword skill-keyword--link">Scout</a></td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class="barbarian-armor">
           <h3>Armor</h3>
