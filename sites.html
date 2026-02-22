@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secundus — Sites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IBM+Plex+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav id="main-nav">
+    <a href="index.html" class="logo">Secundus</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html#overview">Overview</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="barbarian.html">Barbarian</a></li>
+      <li><a href="sites.html" class="nav-active">Sites</a></li>
+      <li><a href="rules.html">Rules</a></li>
+      <li><a href="rolls.html">Rolls</a></li>
+      <li><a href="skills.html">Skills</a></li>
+    </ul>
+  </nav>
+  <!-- =================== END NAV =================== -->
+
+  <main>
+
+    <!-- ===================== SITES HEADER ===================== -->
+    <section id="sites-hero">
+      <div class="section-inner">
+        <div class="section-label">The Territory</div>
+        <h2>Build Your Site</h2>
+        <p>Sites are places. Ruins, margins, half-alive things. You make them the same way you make a barbarian — roll or choose, then place them on the board before the expedition begins.</p>
+        <p>Each site grants a keyword skill to any barbarian occupying it. Lose the site, lose the skill. A barbarian at a site is not just standing there. They are in relationship with it — and with everything else that is drawn to it.</p>
+        <p>Sites also carry alternate win conditions. These are not about killing. They are about the web of things around you: predators, scavengers, remnants, the ground itself. Win through the territory, not through the fight.</p>
+      </div>
+    </section>
+    <!-- =================== END SITES HEADER =================== -->
+
+    <!-- ===================== SITE TABLE ===================== -->
+    <section id="site-entries">
+      <div class="section-inner">
+
+        <div class="site-build-intro">
+          <span>Roll once or pick. Place before play. A site occupies at least a 3″ footprint on the board.</span>
+          <a href="skills.html" class="roll-link">Keyword Skills Reference →</a>
+        </div>
+
+        <div class="site-table-block">
+          <h3>Sites (d6)</h3>
+          <p class="table-instruction">Each site grants a skill to any barbarian in base contact or within its boundary.</p>
+          <table class="ref-table site-table">
+            <thead>
+              <tr><th>d6</th><th>Site</th><th>Type</th><th>Grants while occupied</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Collapsed Relay Tower</td>
+                <td><span class="site-type-tag">High Ground</span></td>
+                <td><a href="skills.html#skill-marksman" class="skill-keyword skill-keyword--link">Marksman</a></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Sump Hollow</td>
+                <td><span class="site-type-tag">Cover</span></td>
+                <td><a href="skills.html#skill-camouflage" class="skill-keyword skill-keyword--link">Camouflage</a></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Bone Cairn</td>
+                <td><span class="site-type-tag">Marker</span></td>
+                <td><a href="skills.html#skill-weird" class="skill-keyword skill-keyword--link">Weird</a></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Scrap Depot</td>
+                <td><span class="site-type-tag">Salvage</span></td>
+                <td><a href="skills.html#skill-survivor" class="skill-keyword skill-keyword--link">Survivor</a></td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Pressure Vent</td>
+                <td><span class="site-type-tag">Hazard</span></td>
+                <td><a href="skills.html#skill-rend" class="skill-keyword skill-keyword--link">Rend</a></td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Old Road Junction</td>
+                <td><span class="site-type-tag">Transit</span></td>
+                <td><a href="skills.html#skill-scout" class="skill-keyword skill-keyword--link">Scout</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SITE RULES -->
+        <div class="site-rules">
+
+          <div class="site-rule-block">
+            <h3>Occupation</h3>
+            <p>A barbarian occupies a site if they end their activation within its boundary and no threat model is also within that boundary. Shared occupation does not count — the site is contested and neither model gains the skill.</p>
+          </div>
+
+          <div class="site-rule-block">
+            <h3>Losing the Site</h3>
+            <p>If a threat enters the site boundary, occupation ends immediately. The barbarian loses the granted skill until they re-establish occupation uncontested at the start of any future activation.</p>
+          </div>
+
+          <div class="site-rule-block">
+            <h3>Multiple Barbarians</h3>
+            <p>Two barbarians from the same warband can share a site without contest. Both gain the granted skill. Three or more barbarians occupying a single site must immediately make a <a href="rolls.html" class="roll-link">Corruption Roll</a> — the site is too small and the pressure too close.</p>
+          </div>
+
+        </div>
+        <!-- END SITE RULES -->
+
+      </div>
+    </section>
+    <!-- =================== END SITE TABLE =================== -->
+
+    <!-- ===================== WIN CONDITIONS ===================== -->
+    <section id="site-wins">
+      <div class="section-inner">
+
+        <div class="section-label">Alternate Victory</div>
+        <h2>Win Conditions</h2>
+        <p>Standard victory is survival and extraction. Site win conditions are something else. They require a barbarian to be in a specific ecological relationship with other models on the board — not fighting them, but positioned relative to them in a way that means something.</p>
+        <p>Each site has one win condition. At the end of any round, check if it is met. If it is, the expedition ends immediately. That barbarian's player narrates the aftermath.</p>
+
+        <div class="site-wins-grid">
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Collapsed Relay Tower</span>
+              <span class="site-win-label">Apex Watch</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site while at least three other models — threats or allies — are within 9″ and none of them are in base contact with each other.</p>
+              <p class="site-win-ecology">The web holds. You are the centre of it. Everything around you is moving in relation to you without touching. That is a kind of power the waste does not usually allow.</p>
+            </div>
+          </div>
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Sump Hollow</span>
+              <span class="site-win-label">Still Water</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site for three consecutive rounds without making any attack or being the target of any attack.</p>
+              <p class="site-win-ecology">Violence happened around you and you did not become part of it. In the hollow, beneath the sight lines, you waited. The waste passed over. You are still here.</p>
+            </div>
+          </div>
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Bone Cairn</span>
+              <span class="site-win-label">The Last Witness</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site while they are the only non-threat model remaining on the board, and at least two threat models are still alive.</p>
+              <p class="site-win-ecology">Everyone else is gone and the threats are still circling. You are standing at the cairn. That is enough. It has always been enough. The cairn knows what you did to get here.</p>
+            </div>
+          </div>
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Scrap Depot</span>
+              <span class="site-win-label">Full Hands</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site while carrying two artifacts, and at least one other barbarian in the warband is carrying zero artifacts.</p>
+              <p class="site-win-ecology">You took more than you needed. Someone else has nothing. The depot made that happen — it concentrated what little there is. That is the economy of this place.</p>
+            </div>
+          </div>
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Pressure Vent</span>
+              <span class="site-win-label">Controlled Burn</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site immediately after a threat model is eliminated within 6″ of it by any cause — including hazard effects from the vent itself.</p>
+              <p class="site-win-ecology">The vent did the work or you used it as a weapon. Either way, something died close to a place that was already killing. You steered that. You made the hazard useful.</p>
+            </div>
+          </div>
+
+          <div class="site-win-card">
+            <div class="site-win-header">
+              <span class="site-win-site">Old Road Junction</span>
+              <span class="site-win-label">Free Passage</span>
+            </div>
+            <div class="site-win-body">
+              <p class="site-win-condition">A barbarian occupies this site while every other barbarian in the warband has already exited the board via any extraction point.</p>
+              <p class="site-win-ecology">You stayed at the junction until the others were clear. You held the road open. The junction is yours now — not to keep, but because you were the last one through it and you chose to be.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- =================== END WIN CONDITIONS =================== -->
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <span>Secundus &copy; 2026</span>
+    <span>A Dying Earth Miniature Wargame</span>
+  </footer>
+  <!-- =================== END FOOTER =================== -->
+
+  <script>
+  (function () {
+    const nav = document.getElementById('main-nav');
+    const btn = nav.querySelector('.nav-toggle');
+    btn.addEventListener('click', function () {
+      const open = nav.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('nav-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

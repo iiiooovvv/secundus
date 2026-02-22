@@ -1649,3 +1649,258 @@ footer span {
   .skill-entry-body { padding: 1rem 1.25rem 1.25rem; }
   .skill-name { font-size: 1.6rem; }
 }
+
+/* ===================== SITES ===================== */
+
+/* Sites hero */
+#sites-hero {
+  background: #07080a;
+  position: relative;
+}
+
+#sites-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('2.jpg') center 45% / cover no-repeat;
+  filter: grayscale(0.75) contrast(1.2) brightness(0.32) sepia(0.5);
+  z-index: 0;
+}
+
+#sites-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 6, 8, 0.88) 0%,
+    rgba(5, 6, 8, 0.65) 55%,
+    rgba(5, 6, 8, 0.90) 100%
+  );
+  z-index: 1;
+}
+
+#sites-hero .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#sites-hero .section-label { color: #5a8878; }
+#sites-hero .section-label::after { background: #2a4840; }
+#sites-hero h2 { color: var(--bone); }
+#sites-hero p { color: #c8bba8; max-width: 62ch; }
+#sites-hero p + p { margin-top: 0.75rem; }
+
+/* Site entries section */
+#site-entries {
+  background: #080a08;
+  position: relative;
+}
+
+#site-entries::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('5.jpg') center 50% / cover no-repeat;
+  filter: grayscale(0.8) contrast(1.1) brightness(0.22) sepia(0.4);
+  z-index: 0;
+}
+
+#site-entries::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 8, 6, 0.88);
+  z-index: 1;
+}
+
+#site-entries .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#site-entries .section-label { color: #5a8870; }
+#site-entries .section-label::after { background: #2a4838; }
+#site-entries h2 { color: var(--bone); }
+#site-entries h3 { color: #80a888; border-color: #1e3828; }
+#site-entries p { color: #c8bba8; }
+
+.site-build-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: #7a6a56;
+  font-style: italic;
+}
+
+.site-table-block {
+  margin-bottom: 3rem;
+}
+
+.site-table-block h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.site-table {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+/* Site type tag — terrain classification pill */
+.site-type-tag {
+  display: inline-block;
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5a8878;
+  background: #080e0c;
+  border: 1px solid #1a3828;
+  padding: 0.2em 0.55em;
+  white-space: nowrap;
+}
+
+/* Site rules blocks */
+.site-rules {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  border-top: 1px solid #1e3020;
+  padding-top: 2.5rem;
+}
+
+.site-rule-block h3 {
+  margin-top: 0;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: #80a888;
+  border-color: #1e3828;
+}
+
+.site-rule-block p {
+  font-size: 0.78rem;
+  max-width: 100%;
+  color: #b0a898;
+}
+
+/* Win conditions section */
+#site-wins {
+  background: #060808;
+  position: relative;
+}
+
+#site-wins::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('1.jpg') center 55% / cover no-repeat;
+  filter: grayscale(0.7) contrast(1.15) brightness(0.25) sepia(0.5);
+  z-index: 0;
+}
+
+#site-wins::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 6, 6, 0.88) 0%,
+    rgba(4, 6, 6, 0.72) 50%,
+    rgba(4, 6, 6, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+#site-wins .section-inner {
+  position: relative;
+  z-index: 2;
+}
+
+#site-wins .section-label { color: #4a7868; }
+#site-wins .section-label::after { background: #1e3830; }
+#site-wins h2 { color: var(--bone); }
+#site-wins > .section-inner > p { color: #c0b4a0; max-width: 62ch; }
+#site-wins > .section-inner > p + p { margin-top: 0.75rem; }
+
+/* Win condition card grid */
+.site-wins-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 3rem;
+  border: 1px solid #1a2e22;
+}
+
+.site-win-card {
+  background: rgba(6, 10, 8, 0.85);
+  border-right: 1px solid #1a2e22;
+  border-bottom: 1px solid #1a2e22;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-win-card:nth-child(2n) { border-right: none; }
+.site-win-card:nth-last-child(-n+2) { border-bottom: none; }
+
+.site-win-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid #1a2e22;
+  background: rgba(8, 14, 10, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.site-win-site {
+  font-size: 0.55rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #4a7060;
+}
+
+.site-win-label {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+  color: #a0c8b0;
+  line-height: 1;
+}
+
+.site-win-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.site-win-condition {
+  font-size: 0.78rem;
+  color: #c8bba8;
+  max-width: 100%;
+  margin: 0;
+  border-left: 2px solid #2a5838;
+  padding-left: 0.85rem;
+  line-height: 1.65;
+}
+
+.site-win-ecology {
+  font-size: 0.72rem;
+  color: #607860;
+  font-style: italic;
+  max-width: 100%;
+  margin: 0;
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .site-rules { grid-template-columns: 1fr; gap: 1.5rem; }
+  .site-wins-grid { grid-template-columns: 1fr; }
+  .site-win-card { border-right: none; }
+  .site-win-card:nth-last-child(-n+2) { border-bottom: 1px solid #1a2e22; }
+  .site-win-card:last-child { border-bottom: none; }
+}
+/* =================== END SITES =================== */
