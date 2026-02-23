@@ -1090,6 +1090,12 @@ footer span {
 .dice-tag.doom    { background: #1e0808; color: #c05040; border: 1px solid #3a1010; }
 .dice-tag.wound   { background: #1a0a0a; color: #a04040; border: 1px solid #3a1010; }
 
+a.dice-tag {
+  text-decoration: none;
+  transition: filter 0.15s;
+}
+a.dice-tag:hover { filter: brightness(1.4); }
+
 .roll-result-block p {
   font-size: 0.8rem;
   color: #c0b098;
