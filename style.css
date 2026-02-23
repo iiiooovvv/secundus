@@ -1482,15 +1482,10 @@ footer span {
   flex-wrap: wrap;
 }
 
-.skill-source-tag {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: #3a6045;
-  border: 1px solid #1e3828;
-  padding: 0.2em 0.6em;
-  background: #080e0a;
+.skill-roll-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
   flex-shrink: 0;
 }
 
